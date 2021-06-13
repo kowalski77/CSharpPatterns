@@ -12,6 +12,7 @@ namespace Factory
 {
     [RankColumn]
     [Orderer(SummaryOrderPolicy.FastestToSlowest)]
+    [MarkdownExporter]
     [MemoryDiagnoser]
     public class FactoryBenchmark
     {
