@@ -1,0 +1,128 @@
+[
+  {
+    "Text": "4 + 5",
+    "Difficulty": "Easy",
+    "Answers": [
+      {
+        "Text": "7",
+        "IsCorrect": false
+      },
+      {
+        "Text": "9",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "Text": "4 + 17",
+    "Difficulty": "Medium",
+    "Answers": [
+      {
+        "Text": "23",
+        "IsCorrect": false
+      },
+      {
+        "Text": "21",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "Text": "21 x 2",
+    "Difficulty": "Hard",
+    "Answers": [
+      {
+        "Text": "46",
+        "IsCorrect": false
+      },
+      {
+        "Text": "42",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "Text": "1 + 6",
+    "Difficulty": "Easy",
+    "Answers": [
+      {
+        "Text": "7",
+        "IsCorrect": true
+      },
+      {
+        "Text": "9",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "Text": "45 + 6",
+    "Difficulty": "Medium",
+    "Answers": [
+      {
+        "Text": "51",
+        "IsCorrect": true
+      },
+      {
+        "Text": "53",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "Text": "13 x 4",
+    "Difficulty": "Hard",
+    "Answers": [
+      {
+        "Text": "57",
+        "IsCorrect": false
+      },
+      {
+        "Text": "52",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "Text": "9 + 5",
+    "Difficulty": "Easy",
+    "Answers": [
+      {
+        "Text": "10",
+        "IsCorrect": false
+      },
+      {
+        "Text": "14",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "Text": "67 + 8",
+    "Difficulty": "Medium",
+    "Answers": [
+      {
+        "Text": "76",
+        "IsCorrect": false
+      },
+      {
+        "Text": "75",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "Text": "12 x 3",
+    "Difficulty": "Hard",
+    "Answers": [
+      {
+        "Text": "39",
+        "IsCorrect": false
+      },
+      {
+        "Text": "36",
+        "IsCorrect": true
+      }
+    ]
+  }
+]
