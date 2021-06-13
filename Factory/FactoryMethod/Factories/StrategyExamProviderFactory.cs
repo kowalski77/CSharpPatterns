@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Factory.Models;
 
 namespace Factory.FactoryMethod.Factories
@@ -13,14 +12,9 @@ namespace Factory.FactoryMethod.Factories
             this.strategies = strategies;
         }
 
-        public override ExamProvider CreateExamProvider(Difficulty difficulty)
+        public override ExamProvider? CreateExamProvider(Difficulty difficulty)
         {
-            if (this.strategies.TryGetValue(difficulty, out var strategy))
-            {
-                return strategy;
-            }
-
-            throw new InvalidOperationException($"No strategy registered for type: {difficulty}");
+            return this.strategies.TryGetValue(difficulty, out var strategy) ? strategy : default;
         }
     }
 }

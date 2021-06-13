@@ -4,6 +4,6 @@ namespace Factory.FactoryMethod.Factories
 {
     public abstract class ExamProviderFactory
     {
-        public abstract ExamProvider CreateExamProvider(Difficulty difficulty);
+        public abstract ExamProvider? CreateExamProvider(Difficulty difficulty);
     }
 }

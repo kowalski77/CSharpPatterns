@@ -15,9 +15,19 @@ namespace Factory
             ExamProviderFactory simpleExamProviderFactory = new SimpleExamProviderFactory();
             var examProvider = simpleExamProviderFactory.CreateExamProvider(Difficulty.Hard);
 
+            if (examProvider != null)
+            {
+                var questions = await examProvider.GenerateQuestionsAsync();
+            }
+
             // Reflection
             ExamProviderFactory reflectionExamProviderFactory = new ReflectionExamProviderFactory();
             var examProvider2 = reflectionExamProviderFactory.CreateExamProvider(Difficulty.Easy);
+
+            if (examProvider2 != null)
+            {
+                var questions2 = await examProvider2.GenerateQuestionsAsync();
+            }
 
             // Strategy
             var dictionary = new Dictionary<Difficulty, ExamProvider>
@@ -29,9 +39,10 @@ namespace Factory
             ExamProviderFactory strategyExamProviderFactory = new StrategyExamProviderFactory(dictionary);
             var examProvider3 = strategyExamProviderFactory.CreateExamProvider(Difficulty.Medium);
 
-            var questions = await examProvider.GenerateQuestionsAsync();
-            var questions2 = await examProvider2.GenerateQuestionsAsync();
-            var questions3 = await examProvider3.GenerateQuestionsAsync();
+            if (examProvider3 != null)
+            {
+                var questions3 = await examProvider3.GenerateQuestionsAsync();
+            }
         }
     }
 }

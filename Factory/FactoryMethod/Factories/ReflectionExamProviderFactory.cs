@@ -8,7 +8,7 @@ namespace Factory.FactoryMethod.Factories
 {
     public class ReflectionExamProviderFactory : ExamProviderFactory
     {
-        public override ExamProvider CreateExamProvider(Difficulty difficulty)
+        public override ExamProvider? CreateExamProvider(Difficulty difficulty)
         {
             var providers = Assembly.GetAssembly(typeof(ReflectionExamProviderFactory))?.
                 GetTypes()
@@ -19,7 +19,7 @@ namespace Factory.FactoryMethod.Factories
                 .Single(x => x.Name.ToLowerInvariant()
                     .Contains(difficulty.ToString().ToLowerInvariant()));
 
-            var providerInstance = (ExamProvider)Activator.CreateInstance(providerType, new QuestionJsonProxy());
+            var providerInstance = Activator.CreateInstance(providerType, new QuestionJsonProxy()) as ExamProvider;
 
             return providerInstance;
         }
