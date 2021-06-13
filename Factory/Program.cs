@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using BenchmarkDotNet.Running;
-using Factory.FactoryMethod;
-using Factory.FactoryMethod.Factories;
-using Factory.Models;
-using Factory.Support;
 
 namespace Factory
 {
