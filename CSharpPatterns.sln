@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Decorator", "Decorator\Deco
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proxy", "Proxy\Proxy.csproj", "{733C5E56-7859-43F0-B60D-A6C1E34C2F76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factory", "Factory\Factory.csproj", "{F78FAF25-841C-4BAA-8563-8AF4A4A96821}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Factory", "Factory\Factory.csproj", "{F78FAF25-841C-4BAA-8563-8AF4A4A96821}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChannelOfResponsibilityImproved", "ChannelOfResponsibilityImproved\ChannelOfResponsibilityImproved.csproj", "{3D5CC501-07C4-43ED-8314-5F16AE4BCA79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{F78FAF25-841C-4BAA-8563-8AF4A4A96821}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F78FAF25-841C-4BAA-8563-8AF4A4A96821}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F78FAF25-841C-4BAA-8563-8AF4A4A96821}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D5CC501-07C4-43ED-8314-5F16AE4BCA79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D5CC501-07C4-43ED-8314-5F16AE4BCA79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D5CC501-07C4-43ED-8314-5F16AE4BCA79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D5CC501-07C4-43ED-8314-5F16AE4BCA79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

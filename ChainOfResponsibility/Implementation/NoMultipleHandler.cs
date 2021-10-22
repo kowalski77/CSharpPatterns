@@ -2,7 +2,7 @@
 
 namespace ChainOfResponsibility.Implementation
 {
-    public class NoMultiple : HandlerBase<int, string>
+    public class NoMultipleHandler : HandlerBase<int, string>
     {
         public override string Run(int request)
         {

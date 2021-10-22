@@ -8,10 +8,10 @@ namespace ChainOfResponsibility
     {
         private static void Main()
         {
-            var handler = new MultipleOfThree();
+            var handler = new MultipleOfThreeHandler();
             handler
-                .Next(new MultipleOfFive())
-                .Next(new NoMultiple());
+                .Next(new MultipleOfFiveHandler())
+                .Next(new NoMultipleHandler());
 
             var range = Enumerable.Range(1, 10).ToList();
             range.ForEach(number =>

@@ -2,12 +2,12 @@
 
 namespace ChainOfResponsibility.Implementation
 {
-    public class MultipleOfFive : HandlerBase<int, string>
+    public class MultipleOfThreeHandler : HandlerBase<int, string>
     {
         public override string Run(int request)
         {
-            return request.IsDivisibleBy(5) ? 
-                $"The number: {request} is divisible by 5" : 
+            return request.IsDivisibleBy(3) ? 
+                $"The number: {request} is divisible by 3" : 
                 base.Run(request);
         }
     }
