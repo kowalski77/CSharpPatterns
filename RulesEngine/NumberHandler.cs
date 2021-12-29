@@ -9,15 +9,20 @@ public class NumberHandler
         this.handlers = handlers ?? throw new ArgumentNullException(nameof(handlers));
     }
 
-    public void Handle(Number number)
+    public string Handle(Number number)
     {
         ArgumentNullException.ThrowIfNull(number);
 
-        Console.WriteLine($"Number: {number.Value}");
-
+        var result = string.Empty;
         foreach (var handler in this.handlers)
         {
-            handler.Handle(number);
+            result = handler.Handle(number);
+            if (!string.IsNullOrEmpty(result))
+            {
+                return result;
+            }
         }
+
+        return result;
     }
 }
