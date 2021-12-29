@@ -8,4 +8,8 @@
 		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\SharedKernel\SharedKernel.csproj" />
+	</ItemGroup>
+
 </Project>

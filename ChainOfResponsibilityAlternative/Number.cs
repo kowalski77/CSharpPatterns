@@ -1,15 +1,12 @@
-﻿namespace ChainOfResponsibilityAlternative;
+﻿using SharedKernel;
+
+namespace ChainOfResponsibilityAlternative;
 
 public class Number
 {
     private Number(int value)
     {
-        if (value <= 0)
-        {
-            throw new ArgumentOutOfRangeException(nameof(value));
-        }
-
-        this.Value = value;
+        this.Value = Guards.ThrowIfLessOrEqualThan(value, 0);
     }
 
     public int Value { get; }
