@@ -4,16 +4,18 @@
     {
         private IHandler<TRequest, TResponse>? nextHandler;
 
-        public IHandler<TRequest, TResponse> Next(IHandler<TRequest, TResponse> handler)
+        public IHandler<TRequest, TResponse> SetNext(IHandler<TRequest, TResponse> handler)
         {
             this.nextHandler = handler;
 
             return this.nextHandler;
         }
 
-        public virtual TResponse Run(TRequest request)
+        public virtual TResponse? Run(TRequest request)
         {
-            return this.nextHandler!.Run(request);
+            return this.nextHandler is not null ?
+                this.nextHandler.Run(request) : 
+                default;
         }
     }
 }

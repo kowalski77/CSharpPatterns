@@ -2,8 +2,8 @@
 {
     public interface IHandler<TRequest, TResponse>
     {
-        IHandler<TRequest, TResponse> Next(IHandler<TRequest, TResponse> handler);
+        IHandler<TRequest, TResponse> SetNext(IHandler<TRequest, TResponse> handler);
 
-        TResponse Run(TRequest request);
+        TResponse? Run(TRequest request);
     }
 }
