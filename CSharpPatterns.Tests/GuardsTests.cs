@@ -20,7 +20,7 @@ public class GuardsTests
     }
 
     [Fact]
-    public void Guard_does_not_throws_ArgumentOutOfRangeException_with_valid_input_parameter()
+    public void Guard_does_not_throw_ArgumentOutOfRangeException_with_valid_input_parameter()
     {
         // Arrange
         const int number = 1;

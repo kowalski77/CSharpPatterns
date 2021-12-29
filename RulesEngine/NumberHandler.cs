@@ -1,4 +1,4 @@
-﻿namespace ChainOfResponsibilityAlternative;
+﻿namespace RulesEngine;
 
 public class NumberHandler
 {

@@ -1,6 +1,6 @@
 ﻿using SharedKernel;
 
-namespace ChainOfResponsibilityAlternative;
+namespace RulesEngine;
 
 public class Number
 {

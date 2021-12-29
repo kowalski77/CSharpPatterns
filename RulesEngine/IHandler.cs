@@ -1,4 +1,4 @@
-﻿namespace ChainOfResponsibilityAlternative;
+﻿namespace RulesEngine;
 
 public interface IHandler<in T> where T : class
 {
