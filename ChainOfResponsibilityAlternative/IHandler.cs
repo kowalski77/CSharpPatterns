@@ -1,7 +1,6 @@
-﻿namespace ChainOfResponsibilityAlternative
+﻿namespace ChainOfResponsibilityAlternative;
+
+public interface IHandler<in T> where T : class
 {
-    public interface IHandler<in T> where T : class
-    {
-        void Handle(T request);
-    }
+    void Handle(T request);
 }

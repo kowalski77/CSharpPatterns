@@ -1,15 +1,14 @@
-﻿using System;
+﻿namespace ChainOfResponsibilityAlternative;
 
-namespace ChainOfResponsibilityAlternative
+public class NoMultipleHandler : IHandler<Number>
 {
-    public class NoMultipleHandler : IHandler<Number>
+    public void Handle(Number request)
     {
-        public void Handle(Number request)
+        ArgumentNullException.ThrowIfNull(request);
+
+        if (!request.IsDivisibleBy(3) && !request.IsDivisibleBy(5))
         {
-            if (!request.IsDivisibleBy(3) && !request.IsDivisibleBy(5))
-            {
-                Console.WriteLine($"The Number: {request.Value} has no defined multiples");
-            }
+            Console.WriteLine($"The Number: {request.Value} has no defined multiples");
         }
     }
 }

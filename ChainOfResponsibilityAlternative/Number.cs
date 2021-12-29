@@ -1,26 +1,26 @@
-﻿using System;
+﻿namespace ChainOfResponsibilityAlternative;
 
-namespace ChainOfResponsibilityAlternative
+public class Number
 {
-    public class Number
+    private Number(int value)
     {
-        private Number(int value)
+        if (value <= 0)
         {
-            if (value <= 0)
-            {
-                throw new ArgumentOutOfRangeException(nameof(value));
-            }
-
-            this.Value = value;
+            throw new ArgumentOutOfRangeException(nameof(value));
         }
 
-        public static Number CreateInstance(int value)
-        {
-            return new Number(value);
-        }
+        this.Value = value;
+    }
 
-        public int Value { get; }
+    public int Value { get; }
 
-        public bool IsDivisibleBy(int value) => this.Value % value == 0;
+    public static Number CreateInstance(int value)
+    {
+        return new Number(value);
+    }
+
+    public bool IsDivisibleBy(int value)
+    {
+        return this.Value % value == 0;
     }
 }
