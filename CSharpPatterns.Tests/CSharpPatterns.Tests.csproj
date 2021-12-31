@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ChainOfResponsibility\ChainOfResponsibility.csproj" />
+    <ProjectReference Include="..\Decorator\Decorator.csproj" />
     <ProjectReference Include="..\RulesEngine\RulesEngine.csproj" />
     <ProjectReference Include="..\SharedKernel\SharedKernel.csproj" />
   </ItemGroup>
