@@ -1,7 +1,6 @@
-﻿namespace Strategy.Support
+﻿namespace Strategy.Support;
+
+public class First : IMessage
 {
-    public class First : IMessage
-    {
-        public string? Text { get; set; }
-    }
+    public string? Text { get; set; }
 }

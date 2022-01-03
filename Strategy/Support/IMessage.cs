@@ -1,7 +1,6 @@
-﻿namespace Strategy.Support
+﻿namespace Strategy.Support;
+
+public interface IMessage
 {
-    public interface IMessage
-    {
-        string? Text { get; set; }
-    }
+    string? Text { get; set; }
 }

@@ -1,15 +1,14 @@
 ﻿using Strategy.Support;
 
-namespace Strategy.Classic
+namespace Strategy.Classic;
+
+public class SecondMessage : IMessageStrategy
 {
-    public class SecondMessage : IMessageStrategy
+    public IMessage Create(string text)
     {
-        public IMessage Create(string text)
+        return new Second
         {
-            return new Second
-            {
-                Text = text
-            };
-        }
+            Text = text
+        };
     }
 }

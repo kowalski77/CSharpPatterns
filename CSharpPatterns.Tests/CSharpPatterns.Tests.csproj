@@ -28,6 +28,7 @@
     <ProjectReference Include="..\Factory\Factory.csproj" />
     <ProjectReference Include="..\RulesEngine\RulesEngine.csproj" />
     <ProjectReference Include="..\SharedKernel\SharedKernel.csproj" />
+    <ProjectReference Include="..\Strategy\Strategy.csproj" />
   </ItemGroup>
 
 </Project>

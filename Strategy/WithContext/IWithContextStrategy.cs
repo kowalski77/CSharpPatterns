@@ -1,12 +1,10 @@
-﻿using System;
-using Strategy.Support;
+﻿using Strategy.Support;
 
-namespace Strategy.WithContext
+namespace Strategy.WithContext;
+
+public interface IWithContextStrategy
 {
-    public interface IWithContextStrategy
-    {
-        Type Type { get; }
+    Type Type { get; }
 
-        IMessage Create();
-    }
+    IMessage Create();
 }

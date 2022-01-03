@@ -1,23 +1,21 @@
-﻿using System.Linq;
-using Strategy.Support;
+﻿using Strategy.Support;
 
-namespace Strategy.WithContext
+namespace Strategy.WithContext;
+
+public class Context
 {
-    public class Context
+    private readonly IWithContextStrategy[] strategies;
+
+    public Context(IWithContextStrategy[] strategies)
     {
-        private readonly IWithContextStrategy[] strategies;
+        this.strategies = strategies;
+    }
 
-        public Context(IWithContextStrategy[] strategies)
-        {
-            this.strategies = strategies;
-        }
+    public IMessage Create<T>()
+        where T : IMessage
+    {
+        var strategy = this.strategies.Single(x => x.Type == typeof(T));
 
-        public IMessage Create<T>()
-            where T : IMessage
-        {
-            var strategy = this.strategies.Single(x => x.Type == typeof(T));
-
-            return strategy.Create();
-        }
+        return strategy.Create();
     }
 }

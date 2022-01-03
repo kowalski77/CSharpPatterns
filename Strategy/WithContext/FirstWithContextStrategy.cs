@@ -1,18 +1,16 @@
-﻿using System;
-using Strategy.Support;
+﻿using Strategy.Support;
 
-namespace Strategy.WithContext
+namespace Strategy.WithContext;
+
+public class FirstWithContextStrategy : IWithContextStrategy
 {
-    public class FirstWithContextStrategy : IWithContextStrategy
-    {
-        public Type Type => typeof(First);
+    public Type Type => typeof(First);
 
-        public IMessage Create()
+    public IMessage Create()
+    {
+        return new First
         {
-            return new First
-            {
-                Text = "First message"
-            };
-        }
+            Text = "First message"
+        };
     }
 }

@@ -1,9 +1,8 @@
 ﻿using Strategy.Support;
 
-namespace Strategy.Classic
+namespace Strategy.Classic;
+
+public interface IMessageStrategy
 {
-    public interface IMessageStrategy
-    {
-        IMessage Create(string text);
-    }
+    IMessage Create(string text);
 }
