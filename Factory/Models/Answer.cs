@@ -1,9 +1,8 @@
-﻿namespace Factory.Models
-{
-    public class Answer
-    {
-        public string Text { get; set; } = string.Empty;
+﻿namespace Factory.Models;
 
-        public bool IsCorrect { get; set; }
-    }
+public class Answer
+{
+    public string Text { get; set; } = string.Empty;
+
+    public bool IsCorrect { get; set; }
 }

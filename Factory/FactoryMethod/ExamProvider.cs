@@ -1,21 +1,18 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Factory.Models;
+﻿using Factory.Models;
 using Factory.Support;
 
-namespace Factory.FactoryMethod
+namespace Factory.FactoryMethod;
+
+public abstract class ExamProvider
 {
-    public abstract class ExamProvider
+    protected ExamProvider(IQuestionProvider questionProvider)
     {
-        protected ExamProvider(IQuestionProvider questionProvider)
-        {
-            this.QuestionProvider = questionProvider;
-        }
-
-        protected IQuestionProvider QuestionProvider { get; }
-
-        public abstract double MinPercentage { get; }
-
-        public abstract Task<IEnumerable<Question>> GenerateQuestionsAsync();
+        this.QuestionProvider = questionProvider;
     }
+
+    protected IQuestionProvider QuestionProvider { get; }
+
+    public abstract double MinPercentage { get; }
+
+    public abstract Task<IEnumerable<Question>> GenerateQuestionsAsync();
 }

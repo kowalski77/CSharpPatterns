@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Factory.Models;
+﻿using Factory.Models;
 
-namespace Factory.Support
+namespace Factory.Support;
+
+public interface IQuestionProvider
 {
-    public interface IQuestionProvider
-    {
-        Task<IReadOnlyList<Question>> GetAllAsync(Func<Question, bool> predicate);
-    }
+    Task<IReadOnlyList<Question>> GetAllAsync(Func<Question, bool> predicate);
 }

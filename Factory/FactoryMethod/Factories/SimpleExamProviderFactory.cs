@@ -1,19 +1,25 @@
 ﻿using Factory.Models;
 using Factory.Support;
 
-namespace Factory.FactoryMethod.Factories
+namespace Factory.FactoryMethod.Factories;
+
+public class SimpleExamProviderFactory : ExamProviderFactory
 {
-    public class SimpleExamProviderFactory : ExamProviderFactory
+    private readonly IQuestionProvider questionProvider;
+
+    public SimpleExamProviderFactory(IQuestionProvider questionProvider)
     {
-        public override ExamProvider? CreateExamProvider(Difficulty difficulty)
+        this.questionProvider = questionProvider ?? throw new ArgumentNullException(nameof(questionProvider));
+    }
+
+    public override ExamProvider CreateExamProvider(Difficulty difficulty)
+    {
+        return difficulty switch
         {
-            return difficulty switch
-            {
-                Difficulty.Easy => new EasyExamProvider(new QuestionJsonProxy()),
-                Difficulty.Medium => new EasyExamProvider(new QuestionJsonProxy()),
-                Difficulty.Hard => new HardExamProvider(new QuestionJsonProxy()),
-                _ => default
-            };
-        }
+            Difficulty.Easy => new EasyExamProvider(this.questionProvider),
+            Difficulty.Medium => new EasyExamProvider(this.questionProvider),
+            Difficulty.Hard => new HardExamProvider(this.questionProvider),
+            _ => throw new InvalidOperationException("Could not create the exam provider")
+        };
     }
 }

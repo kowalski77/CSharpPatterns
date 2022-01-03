@@ -1,20 +1,20 @@
-﻿using System.Collections.Generic;
-using Factory.Models;
+﻿using Factory.Models;
 
-namespace Factory.FactoryMethod.Factories
+namespace Factory.FactoryMethod.Factories;
+
+public class StrategyExamProviderFactory : ExamProviderFactory
 {
-    public class StrategyExamProviderFactory : ExamProviderFactory
+    private readonly Dictionary<Difficulty, ExamProvider> strategies;
+
+    public StrategyExamProviderFactory(Dictionary<Difficulty, ExamProvider> strategies)
     {
-        private readonly Dictionary<Difficulty, ExamProvider> strategies;
+        this.strategies = strategies;
+    }
 
-        public StrategyExamProviderFactory(Dictionary<Difficulty, ExamProvider> strategies)
-        {
-            this.strategies = strategies;
-        }
-
-        public override ExamProvider? CreateExamProvider(Difficulty difficulty)
-        {
-            return this.strategies.TryGetValue(difficulty, out var strategy) ? strategy : default;
-        }
+    public override ExamProvider CreateExamProvider(Difficulty difficulty)
+    {
+        return this.strategies.TryGetValue(difficulty, out var strategy) ?
+            strategy :
+            throw new InvalidOperationException("Could not create the exam provider");
     }
 }

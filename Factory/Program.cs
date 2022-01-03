@@ -1,18 +1,16 @@
-﻿using System;
-using BenchmarkDotNet.Running;
+﻿using BenchmarkDotNet.Running;
 
-namespace Factory
+namespace Factory;
+
+internal static class Program
 {
-    internal static class Program
+    private static void Main()
     {
-        private static void Main()
-        {
-            var summary = BenchmarkRunner.Run<FactoryBenchmark>();
+        var summary = BenchmarkRunner.Run<FactoryBenchmark>();
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Benchmark finished!. Press any key to close");
-            Console.ResetColor();
-            Console.ReadKey();
-        }
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.WriteLine("Benchmark finished!. Press any key to close");
+        Console.ResetColor();
+        Console.ReadKey();
     }
 }
