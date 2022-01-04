@@ -23,13 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ChainOfResponsibility\ChainOfResponsibility.csproj" />
-    <ProjectReference Include="..\Decorator\Decorator.csproj" />
+    <ProjectReference Include="..\DesignPatterns\DesignPatterns.csproj" />
     <ProjectReference Include="..\Factory\Factory.csproj" />
-    <ProjectReference Include="..\RulesEngine\RulesEngine.csproj" />
     <ProjectReference Include="..\SharedKernel\SharedKernel.csproj" />
-    <ProjectReference Include="..\Strategy\Strategy.csproj" />
-    <ProjectReference Include="..\TemplateMethod\TemplateMethod.csproj" />
   </ItemGroup>
 
 </Project>

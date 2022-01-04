@@ -1,4 +1,4 @@
-﻿using ChainOfResponsibility.Implementation;
+﻿using DesignPatterns.Chain.Implementation;
 using FluentAssertions;
 using Xunit;
 

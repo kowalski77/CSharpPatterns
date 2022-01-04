@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using DesignPatterns.Strategy.Classic;
+using DesignPatterns.Strategy.Support;
+using DesignPatterns.Strategy.WithContext;
 using FluentAssertions;
-using Strategy.Classic;
-using Strategy.Support;
-using Strategy.WithContext;
 using Xunit;
 
 namespace CSharpPatterns.Tests;
@@ -34,7 +34,7 @@ public class StrategyTests
         // Arrange
         IWithContextStrategy[] strategies =
         {
-            new FirstWithContextStrategy(), 
+            new FirstWithContextStrategy(),
             new SecondWithContextStrategy()
         };
         var sut = new Context(strategies);

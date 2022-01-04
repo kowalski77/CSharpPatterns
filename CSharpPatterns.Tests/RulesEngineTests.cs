@@ -1,5 +1,5 @@
-﻿using FluentAssertions;
-using RulesEngine;
+﻿using DesignPatterns.RulesEngine;
+using FluentAssertions;
 using Xunit;
 
 namespace CSharpPatterns.Tests;
