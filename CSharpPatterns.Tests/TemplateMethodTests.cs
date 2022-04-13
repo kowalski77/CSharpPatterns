@@ -17,7 +17,8 @@ public class TemplateMethodTests
 
         // Assert
         result.Item.Should()
-            .Contain("First thing done").And
+            .Contain("First thing done")
+            .And
             .Contain("Second thing done");
     }
 }

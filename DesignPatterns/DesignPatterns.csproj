@@ -11,6 +11,7 @@
 	<ItemGroup>
 	  <Folder Include="Chain\" />
 	  <Folder Include="Decorator\" />
+	  <Folder Include="State\" />
 	  <Folder Include="TemplateMethod\" />
 	  <Folder Include="Strategy\" />
 	  <Folder Include="RulesEngine\" />
