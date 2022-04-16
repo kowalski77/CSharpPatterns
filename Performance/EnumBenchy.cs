@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using BenchmarkDotNet.Attributes;
+﻿using BenchmarkDotNet.Attributes;
 
 namespace Performance;
 
