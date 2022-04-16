@@ -8,6 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Folder Include="Functional\" />
 	  <Folder Include="Results\" />
 	</ItemGroup>
 
