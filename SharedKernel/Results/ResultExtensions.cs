@@ -21,4 +21,11 @@ public static class ResultExtensions
             func(result.Value) :
             result.Error!;
     }
+
+    public static Result<T> Start<T>(this Result _, Func<Result<T>> func)
+    {
+        ArgumentNullException.ThrowIfNull(func);
+
+        return func();
+    }
 }

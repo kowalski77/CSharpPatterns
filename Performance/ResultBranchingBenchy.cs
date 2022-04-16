@@ -9,12 +9,6 @@ public class ResultBranchingBenchy
     [Benchmark]
     public Result<int> HandleWithIfStatements()
     {
-        var result = Result.Init;
-        if (result.Failure)
-        {
-            return result.Error!;
-        }
-
         var numberResult = GetNumber(5);
         if (numberResult.Failure)
         {
@@ -34,7 +28,7 @@ public class ResultBranchingBenchy
     public Result<int> HandleWithLambdas()
     {
         var result = Result.Init
-            .OnSuccess(() => GetNumber(5))
+            .Start(() => GetNumber(5))
             .OnSuccess(Transform);
 
         return result;
