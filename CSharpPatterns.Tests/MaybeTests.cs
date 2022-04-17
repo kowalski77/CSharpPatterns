@@ -108,6 +108,38 @@ public class MaybeTests
         value.Id.Should().Be(id);
         value.Name.Should().Be(name);
     }
+
+    [Fact]
+    public void TryGetValue_returns_value()
+    {
+        // Arrange
+        var product = new Product
+        {
+            Id = 1, Name = "product"
+        };
+        Maybe<Product> maybeProduct = product;
+
+        // Act
+        var maybeValue = maybeProduct.TryGetValue(out var value);
+
+        // Assert
+        maybeValue.Should().BeTrue();
+        value.Should().Be(product);
+    }
+
+    [Fact]
+    public void TryGetValue_returns_false_when_no_value()
+    {
+        // Arrange
+        Maybe<Product> maybeProduct = (Product)null!;
+
+        // Act
+        var maybeValue = maybeProduct.TryGetValue(out var value);
+
+        // Assert
+        maybeValue.Should().BeFalse();
+        value.Should().BeNull();
+    }
 }
 
 public class Product
