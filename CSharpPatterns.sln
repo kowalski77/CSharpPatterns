@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns", "DesignPat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggingDemo", "LoggingDemo\LoggingDemo.csproj", "{F0B1A1DE-7C6A-4B94-AE89-E6CA6F3CA43C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Performance", "Performance\Performance.csproj", "{4756ED2A-2959-41F8-929E-70066948983A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Performance", "Performance\Performance.csproj", "{4756ED2A-2959-41F8-929E-70066948983A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceGenerators", "SourceGenerators\SourceGenerators.csproj", "{F69D6EEA-8688-4572-A4BD-57D52CAC4A75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{4756ED2A-2959-41F8-929E-70066948983A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4756ED2A-2959-41F8-929E-70066948983A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4756ED2A-2959-41F8-929E-70066948983A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F69D6EEA-8688-4572-A4BD-57D52CAC4A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F69D6EEA-8688-4572-A4BD-57D52CAC4A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F69D6EEA-8688-4572-A4BD-57D52CAC4A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F69D6EEA-8688-4572-A4BD-57D52CAC4A75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{975CA9CD-1326-445B-A7F2-A6E1F8802B1F} = {6E5C32B0-A8A4-455B-A1C2-39186321FC1E}
 		{F0B1A1DE-7C6A-4B94-AE89-E6CA6F3CA43C} = {6BB9BBF4-E436-4C11-9FC7-4E2AF4FD856B}
 		{4756ED2A-2959-41F8-929E-70066948983A} = {6BB9BBF4-E436-4C11-9FC7-4E2AF4FD856B}
+		{F69D6EEA-8688-4572-A4BD-57D52CAC4A75} = {6BB9BBF4-E436-4C11-9FC7-4E2AF4FD856B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5A5D1502-888D-4928-9977-43AF0BBD18BB}
