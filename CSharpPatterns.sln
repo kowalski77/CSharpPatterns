@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Performance", "Performance\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SourceGenerators", "SourceGenerators\SourceGenerators.csproj", "{F69D6EEA-8688-4572-A4BD-57D52CAC4A75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comparisons", "Comparisons\Comparisons.csproj", "{2300ABA3-A88C-4AE0-BFF1-CC61D1469738}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Comparisons", "Comparisons\Comparisons.csproj", "{2300ABA3-A88C-4AE0-BFF1-CC61D1469738}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimersInDotNet", "TimersInDotNet\TimersInDotNet.csproj", "{2143CE08-D74F-4876-B382-40F001DD3A6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{2300ABA3-A88C-4AE0-BFF1-CC61D1469738}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2300ABA3-A88C-4AE0-BFF1-CC61D1469738}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2300ABA3-A88C-4AE0-BFF1-CC61D1469738}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2143CE08-D74F-4876-B382-40F001DD3A6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2143CE08-D74F-4876-B382-40F001DD3A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2143CE08-D74F-4876-B382-40F001DD3A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2143CE08-D74F-4876-B382-40F001DD3A6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +89,7 @@ Global
 		{4756ED2A-2959-41F8-929E-70066948983A} = {6BB9BBF4-E436-4C11-9FC7-4E2AF4FD856B}
 		{F69D6EEA-8688-4572-A4BD-57D52CAC4A75} = {6BB9BBF4-E436-4C11-9FC7-4E2AF4FD856B}
 		{2300ABA3-A88C-4AE0-BFF1-CC61D1469738} = {6BB9BBF4-E436-4C11-9FC7-4E2AF4FD856B}
+		{2143CE08-D74F-4876-B382-40F001DD3A6B} = {6BB9BBF4-E436-4C11-9FC7-4E2AF4FD856B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5A5D1502-888D-4928-9977-43AF0BBD18BB}
