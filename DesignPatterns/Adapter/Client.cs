@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace DesignPatterns.Adapter;
+﻿namespace DesignPatterns.Adapter;
 
 public class Client
 {
@@ -13,12 +11,7 @@ public class Client
 
     public string GetExamplesText()
     {
-        var sb = new StringBuilder();
-        foreach (var example in this.specificAdapter.GetExamples())
-        {
-            sb.AppendLine(example.Text);
-        }
-
-        return sb.ToString();
-    } 
+        var examples = this.specificAdapter.GetExamples();
+        return string.Join(", ", examples);
+    }
 }

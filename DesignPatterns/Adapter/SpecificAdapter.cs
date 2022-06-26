@@ -2,7 +2,7 @@
 
 public interface ISpecificAdapter
 {
-    IEnumerable<Example> GetExamples();
+    IEnumerable<string> GetExamples();
 }
 
 public class SpecificAdapter : ISpecificAdapter
@@ -14,8 +14,11 @@ public class SpecificAdapter : ISpecificAdapter
         this.adaptee = adaptee ?? throw new ArgumentNullException(nameof(adaptee));
     }
 
-    public IEnumerable<Example> GetExamples()
+    public IEnumerable<string> GetExamples()
     {
-        return this.adaptee.GetExamples();
+        foreach (var example in this.adaptee.GetExamples())
+        {
+            yield return example.Text;
+        }
     }
 }

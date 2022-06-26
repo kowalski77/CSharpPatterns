@@ -5,7 +5,7 @@ using Comparisons;
 var coordinates = new Coordinates(10, 10);
 
 // record
-var coordinatesRecord = new CoordinatesRecord(10, 10););
+var coordinatesRecord = new CoordinatesRecord(10, 10);
 var updatedCoordinatesRecord = coordinatesRecord with { Latitude = 20 };
 
 // struct
