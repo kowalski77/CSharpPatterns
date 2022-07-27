@@ -7,7 +7,7 @@ namespace CSharpPatterns.Tests;
 public class CallbackTests
 {
     [Fact]
-    public void Test()
+    public void Callback_on_action_string_provides_reference_to_the_action_context()
     {
         // Arrange
         var result = string.Empty;
