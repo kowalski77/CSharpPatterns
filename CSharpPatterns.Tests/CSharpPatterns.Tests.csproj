@@ -35,6 +35,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DesignPatterns\DesignPatterns.csproj" />
     <ProjectReference Include="..\Factory\Factory.csproj" />
+    <ProjectReference Include="..\Playground\Playground.csproj" />
     <ProjectReference Include="..\SharedKernel\SharedKernel.csproj" />
     <ProjectReference Include="..\SourceGenerators\SourceGenerators.csproj" />
   </ItemGroup>
