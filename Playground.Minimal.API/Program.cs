@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddTransient<FooService>();
+builder.Services.AddTransient<TodoService>();
 
 var app = builder.Build();
 
@@ -19,12 +19,23 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/", async (HttpContext context, FooService fooService) =>
+app.MapGet("/", async (HttpContext context, TodoService todoService) =>
 {
-    var result = fooService.SayHello();
+    var result = todoService.SayHello();
     
     context.Response.ContentType = "text/plain";
     await context.Response.WriteAsync(result);
 }).WithName("hello");
 
+app.MapGet("/todos", (TodoService todoService) =>
+{
+    var todoItemsCollection = todoService.GetTodoItems();
+
+    return Results.Ok(todoItemsCollection);
+}).WithName("todos");
+
 app.Run();
+
+#pragma warning disable CA1050 // Declare types in namespaces
+public partial class Program { }
+#pragma warning restore CA1050 // Declare types in namespaces

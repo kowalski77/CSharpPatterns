@@ -1,13 +1,13 @@
 ﻿using System.Runtime.CompilerServices;
-using VerifyTests;
 
 namespace CSharpPatterns.Tests;
 
 public static class ModuleInitializer
 {
     [ModuleInitializer]
-    public static void Init()
+    public static void Initialize()
     {
-        VerifySourceGenerators.Enable();
+        //VerifySourceGenerators.Enable();
+        VerifyAspNetCore.Enable();
     }
 }
