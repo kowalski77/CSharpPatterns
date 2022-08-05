@@ -14,7 +14,7 @@ public class MinimalAPISnapshotTests : IClassFixture<TestWebApplicationFactory>
     }
 
     [Fact]
-    public async Task Rename()
+    public async Task All_todos_are_retrieved_within_a_successful_response()
     {
         // Act
         var response = await this.httpClient.GetAsync($"/todos");
