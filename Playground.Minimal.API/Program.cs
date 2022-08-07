@@ -1,12 +1,18 @@
+using Microsoft.EntityFrameworkCore;
 using Playground.Minimal.API;
+using Playground.Minimal.API.Products;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddTransient<TodoService>();
+builder.Services.AddScoped<TodoService>();
+builder.Services.AddScoped<ProductsService>();
+
+builder.Services.AddDbContext<ProductsContext>(options =>
+{
+    options.UseSqlite("Filename=ProductsDatabase.db");
+});
 
 var app = builder.Build();
 
@@ -33,6 +39,19 @@ app.MapGet("/todos", (TodoService todoService) =>
 
     return Results.Ok(todoItemsCollection);
 }).WithName("todos");
+
+app.MapGet("/products", async (ProductsService productService) =>
+{
+    var products = await productService.GetAllProductsAsync();
+    return Results.Ok(products);
+}).WithName("get-products");
+
+app.MapPost("/products", async (ProductsService productService, Product product) =>
+{
+    var newlyProduct = await productService.AddAsync(product);
+    return Results.Ok(newlyProduct);
+    
+}).WithName("post-product");
 
 app.Run();
 
