@@ -1,11 +1,11 @@
 ﻿namespace Playground.Endpoints.API.Support;
 
-public static class ServiceRequestExtensions
+public static class RequestExtensions
 {
-    public static IServiceCollection AddServiceRequestsFromAssembly<T>(this IServiceCollection services)
+    public static IServiceCollection AddRequestsFromAssembly<T>(this IServiceCollection services)
     {
         var concretes = typeof(T).Assembly.GetTypes()
-                .Where(p => p.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IServiceRequest<,>)));
+                .Where(p => p.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IRequestHandler<,>)));
 
         foreach (var concrete in concretes)
         {

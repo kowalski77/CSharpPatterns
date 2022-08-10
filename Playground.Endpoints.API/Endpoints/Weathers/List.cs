@@ -9,9 +9,9 @@ public class List : EndpointBaseAsync
     .WithoutRequest
     .WithActionResult<IReadOnlyList<WeatherListResponse>>
 {
-    private readonly IServiceRequest<GetWeatherForecastsRequest, IReadOnlyList<WeatherListResponse>> serviceRequest;
+    private readonly IRequestHandler<GetWeatherForecastsRequest, IReadOnlyList<WeatherListResponse>> serviceRequest;
 
-    public List(IServiceRequest<GetWeatherForecastsRequest, IReadOnlyList<WeatherListResponse>> serviceRequest)
+    public List(IRequestHandler<GetWeatherForecastsRequest, IReadOnlyList<WeatherListResponse>> serviceRequest)
     {
         this.serviceRequest = serviceRequest;
     }
@@ -19,7 +19,7 @@ public class List : EndpointBaseAsync
     [HttpGet("[namespace]")]
     public override async Task<ActionResult<IReadOnlyList<WeatherListResponse>>> HandleAsync(CancellationToken cancellationToken = default)
     {
-        var weatherInfo = await this.serviceRequest.ExecuteAsync(new GetWeatherForecastsRequest(), cancellationToken);
+        var weatherInfo = await this.serviceRequest.HandlerAsync(new GetWeatherForecastsRequest(), cancellationToken);
 
         return this.Ok(weatherInfo);
     }

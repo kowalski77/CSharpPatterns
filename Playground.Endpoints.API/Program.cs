@@ -9,7 +9,7 @@ builder.Services.AddControllers(options =>
 });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddServiceRequestsFromAssembly<GetWeatherForecastsRequest>();
+builder.Services.AddRequestsFromAssembly<GetWeatherForecastsRequest>();
 builder.Services.AddScoped<WeatherRepository>();
 
 var app = builder.Build();
