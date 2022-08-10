@@ -5,7 +5,7 @@ namespace Playground.Endpoints.API.Services;
 
 public record GetWeatherForecastsRequest() : IRequest<IReadOnlyList<WeatherListResponse>>;
 
-public class GetWeatherForecastsHandler : IRequestHandler<GetWeatherForecastsRequest, IReadOnlyList<WeatherListResponse>>
+public class GetWeatherForecastsHandler : IRequestService<GetWeatherForecastsRequest, IReadOnlyList<WeatherListResponse>>
 {
     private readonly WeatherRepository repository;
 
@@ -14,7 +14,7 @@ public class GetWeatherForecastsHandler : IRequestHandler<GetWeatherForecastsReq
         this.repository = repository ?? throw new ArgumentNullException(nameof(repository));
     }
 
-    public async Task<IReadOnlyList<WeatherListResponse>> HandlerAsync(GetWeatherForecastsRequest command, CancellationToken cancellationToken = default)
+    public async Task<IReadOnlyList<WeatherListResponse>> ExecuteAsync(GetWeatherForecastsRequest command, CancellationToken cancellationToken = default)
     {
         var weatherInfo = await repository.GetAsync(cancellationToken);
         
