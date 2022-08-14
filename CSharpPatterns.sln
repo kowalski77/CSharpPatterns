@@ -39,7 +39,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Minimal.API", "P
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{93984DCB-F4BD-4ABC-B323-E3436AAFB8FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Endpoints.API", "Playground.Endpoints.API\Playground.Endpoints.API.csproj", "{A2CA9710-3EF3-4A6C-B300-9A5574873D9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Endpoints.API", "Playground.Endpoints.API\Playground.Endpoints.API.csproj", "{A2CA9710-3EF3-4A6C-B300-9A5574873D9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPL.Studio", "TPL.Studio\TPL.Studio.csproj", "{078356C0-B83F-4087-9A9C-184DF40078D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -107,6 +109,10 @@ Global
 		{A2CA9710-3EF3-4A6C-B300-9A5574873D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2CA9710-3EF3-4A6C-B300-9A5574873D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2CA9710-3EF3-4A6C-B300-9A5574873D9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{078356C0-B83F-4087-9A9C-184DF40078D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{078356C0-B83F-4087-9A9C-184DF40078D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{078356C0-B83F-4087-9A9C-184DF40078D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{078356C0-B83F-4087-9A9C-184DF40078D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,6 +133,7 @@ Global
 		{97E2434D-573A-4141-B08F-F816D1F1AF12} = {6BB9BBF4-E436-4C11-9FC7-4E2AF4FD856B}
 		{3B033A20-5E57-4F0B-835A-9C77F814896B} = {93984DCB-F4BD-4ABC-B323-E3436AAFB8FD}
 		{A2CA9710-3EF3-4A6C-B300-9A5574873D9C} = {93984DCB-F4BD-4ABC-B323-E3436AAFB8FD}
+		{078356C0-B83F-4087-9A9C-184DF40078D0} = {6BB9BBF4-E436-4C11-9FC7-4E2AF4FD856B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5A5D1502-888D-4928-9977-43AF0BBD18BB}
