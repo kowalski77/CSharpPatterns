@@ -18,10 +18,10 @@ public class SampleCertificateValidationService : ICertificateValidationService
     {
         var assembly = typeof(SampleCertificateValidationService).GetTypeInfo().Assembly;
 
-        using var stream = assembly.GetManifestResourceStream("playground.pfx");
+        using var stream = assembly.GetManifestResourceStream("Playground.Certificates.API.Cert.localtest.pfx");
         if (stream is not null)
         {
-            return new X509Certificate2(ReadStream(stream), "1234");
+            return new X509Certificate2(ReadStream(stream), "pa55w0rd!");
         }
         
         throw new InvalidOperationException("Could not retrieve the certificate from assembly");
