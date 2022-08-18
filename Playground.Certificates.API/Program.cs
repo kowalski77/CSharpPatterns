@@ -31,7 +31,16 @@ builder.Services.AddAuthentication(CertificateAuthenticationDefaults.Authenticat
                     context.Principal = new ClaimsPrincipal(new ClaimsIdentity(claims, context.Scheme.Name));
                     context.Success();
                 }
+                else
+                {
+                    context.Fail("The certificate is not valid");
+                }
 
+                return Task.CompletedTask;
+            },
+            OnAuthenticationFailed = context =>
+            {
+                context.Fail("The certificate is not valid");
                 return Task.CompletedTask;
             }
         };

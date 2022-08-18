@@ -47,7 +47,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Certificates.API
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Certificates", "Certificates", "{03A70CFE-6FBC-43EF-A18E-AF3F04416829}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Certificates.Client", "Playground.Certificates.Client\Playground.Certificates.Client.csproj", "{480E044A-B26C-480E-ACF2-326F33F08DE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Certificates.Client", "Playground.Certificates.Client\Playground.Certificates.Client.csproj", "{480E044A-B26C-480E-ACF2-326F33F08DE8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PoC", "PoC", "{8412877F-AD2A-4010-A6C2-72AAB3CBE190}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfiniteScroll.API", "InfiniteScroll.API\InfiniteScroll.API.csproj", "{1A4C3DB0-5206-4935-AD7B-A734B0BFE876}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfiniteScroll.Client", "InfiniteScroll.Client\InfiniteScroll.Client.csproj", "{77852408-4698-4E77-8F0D-CF24C950FD99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -127,6 +133,14 @@ Global
 		{480E044A-B26C-480E-ACF2-326F33F08DE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{480E044A-B26C-480E-ACF2-326F33F08DE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{480E044A-B26C-480E-ACF2-326F33F08DE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A4C3DB0-5206-4935-AD7B-A734B0BFE876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A4C3DB0-5206-4935-AD7B-A734B0BFE876}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A4C3DB0-5206-4935-AD7B-A734B0BFE876}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A4C3DB0-5206-4935-AD7B-A734B0BFE876}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77852408-4698-4E77-8F0D-CF24C950FD99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77852408-4698-4E77-8F0D-CF24C950FD99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77852408-4698-4E77-8F0D-CF24C950FD99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77852408-4698-4E77-8F0D-CF24C950FD99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -151,6 +165,9 @@ Global
 		{6D724C95-B075-40B3-A62D-00E902C10372} = {03A70CFE-6FBC-43EF-A18E-AF3F04416829}
 		{03A70CFE-6FBC-43EF-A18E-AF3F04416829} = {93984DCB-F4BD-4ABC-B323-E3436AAFB8FD}
 		{480E044A-B26C-480E-ACF2-326F33F08DE8} = {03A70CFE-6FBC-43EF-A18E-AF3F04416829}
+		{8412877F-AD2A-4010-A6C2-72AAB3CBE190} = {93984DCB-F4BD-4ABC-B323-E3436AAFB8FD}
+		{1A4C3DB0-5206-4935-AD7B-A734B0BFE876} = {8412877F-AD2A-4010-A6C2-72AAB3CBE190}
+		{77852408-4698-4E77-8F0D-CF24C950FD99} = {8412877F-AD2A-4010-A6C2-72AAB3CBE190}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5A5D1502-888D-4928-9977-43AF0BBD18BB}
