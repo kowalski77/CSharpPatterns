@@ -26,7 +26,6 @@ public class PeopleController : ControllerBase
 
         await foreach (var person in people.WithCancellation(cancellationToken))
         {
-            await Task.Delay(100, cancellationToken);
             yield return person;
         }
     }

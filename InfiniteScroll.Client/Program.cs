@@ -4,14 +4,19 @@ using InfiniteScroll.Client;
 Console.WriteLine("Press a key to start...");
 Console.ReadKey();
 
-var client = new HttpClient
+using HttpClient httpClient = new();
+
+using var response = await httpClient.GetAsync(new Uri("https://localhost:7206/People"), HttpCompletionOption.ResponseHeadersRead);
+
+response.EnsureSuccessStatusCode();
+
+var responseStream = await response.Content.ReadAsStreamAsync();
+var people = JsonSerializer.DeserializeAsyncEnumerable<Person>(responseStream, new JsonSerializerOptions
 {
-    BaseAddress = new Uri("https://localhost:7206/People")
-};
+    PropertyNameCaseInsensitive = true
+});
 
-using var stream = await client.GetStreamAsync(client.BaseAddress);
-
-await foreach(var person in JsonSerializer.DeserializeAsyncEnumerable<Person>(stream))
+await foreach (var person in people!)
 {
     Console.WriteLine($"{person!.Name} - {person.Email}");
 }
