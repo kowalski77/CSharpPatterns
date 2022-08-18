@@ -20,13 +20,25 @@ public class PeopleController : ControllerBase
     public async IAsyncEnumerable<Person> GetPeople([EnumeratorCancellation] CancellationToken cancellationToken)
     {
         // Simulating a long pagination with infinite scroll
-        var people = context.People
-            .AsNoTracking()
-            .AsAsyncEnumerable();
-
-        await foreach (var person in people.WithCancellation(cancellationToken))
+        var skip = 0;
+        var take = 10;
+        while (!cancellationToken.IsCancellationRequested)
         {
-            yield return person;
+            var people = context.People
+                .AsNoTracking()
+                .Skip(skip += 10)
+                .Take(take)
+                .AsAsyncEnumerable();
+
+            if (!await people.AnyAsync())
+            {
+                break;
+            }
+
+            await foreach (var person in people.WithCancellation(cancellationToken))
+            {
+                yield return person;
+            }
         }
     }
 }

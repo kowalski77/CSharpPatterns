@@ -20,3 +20,5 @@ await foreach (var person in people!)
 {
     Console.WriteLine($"{person!.Name} - {person.Email}");
 }
+
+Console.ReadKey();
