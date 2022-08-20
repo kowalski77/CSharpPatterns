@@ -1,4 +1,4 @@
-﻿namespace Playground;
+﻿namespace Playground.Callbacks;
 
 public class Foo
 {
@@ -6,6 +6,6 @@ public class Foo
 
     public void RunSimpleAction()
     {
-        this.SimpleAction?.Invoke("Hello World!");
+        SimpleAction?.Invoke("Hello World!");
     }
 }

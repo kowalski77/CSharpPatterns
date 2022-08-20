@@ -1,4 +1,4 @@
-﻿namespace Playground;
+﻿namespace Playground.Callbacks;
 
 public class Bar
 {
@@ -9,7 +9,7 @@ public class Bar
             Id = id
         };
 
-        this.BarExecuted?.Invoke(this, args);
+        BarExecuted?.Invoke(this, args);
     }
 
     public event EventHandler<BarExecutedEventArgs>? BarExecuted;
