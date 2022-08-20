@@ -3,7 +3,7 @@ using FluentAssertions;
 
 namespace CSharpPatterns.Tests;
 
-public class AsyncInitializationTests
+public class AsyncPatternsTests
 {
     [Fact]
     public async Task AsyncInitialization_returns_instance_initialized()
