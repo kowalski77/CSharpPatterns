@@ -35,6 +35,7 @@
     </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AsyncPatterns\AsyncPatterns.csproj" />
     <ProjectReference Include="..\DesignPatterns\DesignPatterns.csproj" />
     <ProjectReference Include="..\Factory\Factory.csproj" />
     <ProjectReference Include="..\Playground.Minimal.API\Playground.Minimal.API.csproj" />
