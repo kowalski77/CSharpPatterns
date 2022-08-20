@@ -1,4 +1,4 @@
-﻿namespace AsyncPatterns.AsyncInitialization;
+﻿namespace AsyncPatterns;
 
 public class SomeService
 {
