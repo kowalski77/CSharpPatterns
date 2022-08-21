@@ -16,7 +16,17 @@ public class PeopleController : ControllerBase
         this.context = context;
     }
 
-    [HttpGet]
+    [HttpGet("pagination")]
+    public async Task<IActionResult> GetPeople()
+    {
+        var people = await context.People
+            .AsNoTracking()
+            .ToListAsync();
+        
+        return Ok(people);
+    }
+    
+    [HttpGet("scroll")]
     public async IAsyncEnumerable<Person> GetPeople([EnumeratorCancellation] CancellationToken cancellationToken)
     {
         // Simulating a long pagination with infinite scroll
