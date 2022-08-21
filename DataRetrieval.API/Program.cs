@@ -1,4 +1,4 @@
-using InfiniteScroll.API.Data;
+using DataRetrieval.API.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

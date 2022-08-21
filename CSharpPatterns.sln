@@ -51,11 +51,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Certificates.Cli
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PoC", "PoC", "{8412877F-AD2A-4010-A6C2-72AAB3CBE190}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfiniteScroll.API", "InfiniteScroll.API\InfiniteScroll.API.csproj", "{1A4C3DB0-5206-4935-AD7B-A734B0BFE876}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataRetrieval.API", "DataRetrieval.API\DataRetrieval.API.csproj", "{1A4C3DB0-5206-4935-AD7B-A734B0BFE876}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfiniteScroll.Client", "InfiniteScroll.Client\InfiniteScroll.Client.csproj", "{77852408-4698-4E77-8F0D-CF24C950FD99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncPatterns", "AsyncPatterns\AsyncPatterns.csproj", "{8A206E48-0BC3-4A1E-B8D9-7655469A6F5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncPatterns", "AsyncPatterns\AsyncPatterns.csproj", "{8A206E48-0BC3-4A1E-B8D9-7655469A6F5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

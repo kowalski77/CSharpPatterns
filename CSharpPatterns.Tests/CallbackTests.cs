@@ -1,6 +1,5 @@
 ﻿using FluentAssertions;
-using Playground;
-using Xunit;
+using Playground.Callbacks;
 
 namespace CSharpPatterns.Tests;
 
@@ -11,10 +10,12 @@ public class CallbackTests
     {
         // Arrange
         var result = string.Empty;
-        var foo = new Foo();
-        foo.SimpleAction = (s) =>
+        var foo = new Foo
+        {
+            SimpleAction = (s) =>
         {
             result = s;
+        }
         };
 
         // Act

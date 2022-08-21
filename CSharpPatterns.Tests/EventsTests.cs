@@ -1,6 +1,5 @@
 ﻿using FluentAssertions;
-using Playground;
-using Xunit;
+using Playground.Callbacks;
 
 namespace CSharpPatterns.Tests;
 

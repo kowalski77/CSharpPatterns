@@ -1,9 +1,9 @@
 ﻿using System.Runtime.CompilerServices;
-using InfiniteScroll.API.Data;
+using DataRetrieval.API.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace InfiniteScroll.API.Controllers;
+namespace DataRetrieval.API.Controllers;
 
 [ApiController]
 [Route("People")]
