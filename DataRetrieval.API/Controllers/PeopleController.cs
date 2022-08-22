@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using DataRetrieval.API.Data;
+using DataRetrieval.API.Pagination;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,13 +18,17 @@ public class PeopleController : ControllerBase
     }
 
     [HttpGet("pagination")]
-    public async Task<IActionResult> GetPeople()
+    public IActionResult GetPeople()
     {
-        var people = await context.People
-            .AsNoTracking()
-            .ToListAsync();
+        var people = context.People.AsEnumerable();
+
+        var pages = people.Paginate(Person.NameComparer, 10);
+        foreach (var page in pages)
+        {
+            var current = (IEnumerable<Person>)page;
+        }
         
-        return Ok(people);
+        return Ok();
     }
     
     [HttpGet("scroll")]
