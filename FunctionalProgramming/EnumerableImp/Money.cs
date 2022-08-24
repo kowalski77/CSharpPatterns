@@ -1,4 +1,4 @@
-﻿namespace FunctionalProgramming;
+﻿namespace FunctionalProgramming.EnumerableImp;
 
 public record Money : IComparable<Money>
 {
@@ -23,7 +23,7 @@ public record Money : IComparable<Money>
 
     public Currency Currency { get; init; }
 
-    public bool IsZero => this.Amount == 0;
+    public bool IsZero => Amount == 0;
 
     public bool CanAdd(Money other) => IsCompatible(other);
 

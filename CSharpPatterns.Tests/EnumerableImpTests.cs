@@ -1,5 +1,4 @@
 ﻿using FluentAssertions;
-using FunctionalProgramming;
 using FunctionalProgramming.EnumerableImp;
 
 namespace CSharpPatterns.Tests;

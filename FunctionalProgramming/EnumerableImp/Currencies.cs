@@ -1,4 +1,4 @@
-﻿namespace FunctionalProgramming;
+﻿namespace FunctionalProgramming.EnumerableImp;
 
 public static class Currencies
 {
