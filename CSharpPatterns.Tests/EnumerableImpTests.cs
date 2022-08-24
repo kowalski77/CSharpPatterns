@@ -10,7 +10,7 @@ public class EnumerableImpTests
     {
         // Arrange
         var moneys = new Money[] { Currencies.Yen.Of(20), Currencies.Euro.Of(10), Currencies.Dolar.Of(5) };
-        var bag = new MoneyBag(moneys);
+        var bag = moneys.ToMoneyBag();
 
         // Act
         var result = bag.ToList();
@@ -25,7 +25,7 @@ public class EnumerableImpTests
     {
         // Arrange
         var moneys = new Money[] { Currencies.Yen.Of(20), Currencies.Euro.Of(10), Currencies.Dolar.Of(5) };
-        var bag = new MoneyBag(moneys);
+        var bag = moneys.ToMoneyBag();
 
         // Act
         bag.Add(Currencies.Dolar.Of(10));
@@ -41,7 +41,7 @@ public class EnumerableImpTests
     {
         // Arrange
         var moneys = new Money[] { Currencies.Yen.Of(20), Currencies.Euro.Of(10), Currencies.Dolar.Of(10) };
-        var bag = new MoneyBag(moneys);
+        var bag = moneys.ToMoneyBag();
 
         // Act
         bag.Subtract(Currencies.Dolar.Of(10));
