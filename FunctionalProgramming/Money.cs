@@ -23,6 +23,8 @@ public record Money : IComparable<Money>
 
     public Currency Currency { get; init; }
 
+    public bool IsZero => this.Amount == 0;
+
     public bool CanAdd(Money other) => IsCompatible(other);
 
     public Money Add(Money other) => this with { Amount = Amount + Compatible(other).Amount };

@@ -38,6 +38,7 @@
     <ProjectReference Include="..\AsyncPatterns\AsyncPatterns.csproj" />
     <ProjectReference Include="..\DesignPatterns\DesignPatterns.csproj" />
     <ProjectReference Include="..\Factory\Factory.csproj" />
+    <ProjectReference Include="..\FunctionalProgramming\FunctionalProgramming.csproj" />
     <ProjectReference Include="..\Playground.Minimal.API\Playground.Minimal.API.csproj" />
     <ProjectReference Include="..\Playground\Playground.csproj" />
     <ProjectReference Include="..\SharedKernel\SharedKernel.csproj" />

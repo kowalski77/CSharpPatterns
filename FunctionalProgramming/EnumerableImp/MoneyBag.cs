@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 
-namespace FunctionalProgramming;
+namespace FunctionalProgramming.EnumerableImp;
 
 public class MoneyBag : IEnumerable<Money>
 {
     public MoneyBag(IEnumerable<Money> moneys)
     {
         CurrencyToBalance = new();
-        foreach (Money money in moneys) Add(money);
+        foreach (var money in moneys) Add(money);
     }
 
     private SortedDictionary<Currency, Money> CurrencyToBalance { get; }
@@ -26,16 +26,16 @@ public class MoneyBag : IEnumerable<Money>
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
-    private void Set(Money balance)
+    private void Set(Money money)
     {
-        if (CurrencyToBalance.TryGetValue(balance.Currency, out var _))
-            CurrencyToBalance[balance.Currency] = balance;
+        if (money.IsZero)
+            this.CurrencyToBalance.Remove(money.Currency);
         else
-            CurrencyToBalance.Add(balance.Currency, balance);
+            this.CurrencyToBalance[money.Currency] = money;
     }
 
     private Money FindOrZero(Currency currency) =>
-        CurrencyToBalance.TryGetValue(currency, out var money) ?
+        this.CurrencyToBalance.TryGetValue(currency, out var money) ?
         money :
         currency.Of(0);
 }
