@@ -6,18 +6,22 @@ public readonly record struct Currency : IComparable<Currency>
 
     public Currency(string code)
     {
-        this.Code = code;
+        Code = code;
+    }
+
+    public Currency() : this(default!)
+    {
     }
 
     public string Code
     {
-        get => this.code;
-        init => this.code = value.NonEmpty(nameof(Code)).ToUpper();
+        get => code;
+        init => code = value.NonEmpty(nameof(Code));
     }
 
-    public int CompareTo(Currency other) => this.code.CompareTo(other.code);
+    public int CompareTo(Currency other) => Code.CompareTo(other.Code);
 
-    public override string ToString() => this.Code;
+    public override string ToString() => Code;
 
-    //public Money Of(decimal amount, int precision) => new(amount, this, precision);
+    public Money Of(decimal amount) => Money.Create(amount, this);
 }
