@@ -6,25 +6,27 @@ public class MoneyBag : IEnumerable<Money>
 {
     public MoneyBag(IEnumerable<Money> moneys)
     {
-        CurrencyToBalance = new();
-        foreach (var money in moneys) Add(money);
+        this.CurrencyToBalance = new();
+        foreach (var money in moneys) this.Add(money);
     }
 
     private SortedDictionary<Currency, Money> CurrencyToBalance { get; }
 
-    public bool IsZero => CurrencyToBalance.Count == 0;
+    public bool IsZero => this.CurrencyToBalance.Count == 0;
 
-    public Money this[Currency currency] => CurrencyToBalance[currency];
+    public Money this[Currency currency] => this.CurrencyToBalance[currency];
 
-    public void Add(Money money) => Set(FindOrZero(money.Currency).Add(money));
+    public void Add(Money money) => this.Set(this.FindOrZero(money.Currency).Add(money));
 
-    public void Subtract(Money money) => Set(FindOrZero(money.Currency).Substract(money));
+    public void Subtract(Money money) => this.Set(this.FindOrZero(money.Currency).Substract(money));
 
-    private IEnumerable<Money> Values => CurrencyToBalance.Values;
+    public bool CanSubctract(Money money) => this.FindOrZero(money.Currency).CanSubstract(money);
 
-    public IEnumerator<Money> GetEnumerator() => Values.GetEnumerator();
+    private IEnumerable<Money> Values => this.CurrencyToBalance.Values;
 
-    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+    public IEnumerator<Money> GetEnumerator() => this.Values.GetEnumerator();
+
+    IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
     private void Set(Money money)
     {
