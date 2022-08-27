@@ -18,9 +18,9 @@ public class MoneyBag : IEnumerable<Money>
 
     public void Add(Money money) => this.Set(this.FindOrZero(money.Currency).Add(money));
 
-    public void Subtract(Money money) => this.Set(this.FindOrZero(money.Currency).Substract(money));
+    public void Subtract(Money money) => this.Set(this.FindOrZero(money.Currency).Subtract(money));
 
-    public bool CanSubctract(Money money) => this.FindOrZero(money.Currency).CanSubstract(money);
+    public bool CanSubctract(Money money) => this.FindOrZero(money.Currency).CanSubtract(money);
 
     private IEnumerable<Money> Values => this.CurrencyToBalance.Values;
 

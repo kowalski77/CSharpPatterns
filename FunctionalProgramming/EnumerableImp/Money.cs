@@ -6,41 +6,40 @@ public record Money : IComparable<Money>
 
     private Money(decimal amount, Currency currency)
     {
-        Amount = amount;
-        Currency = currency;
+        this.Amount = amount;
+        this.Currency = currency;
     }
 
-    public static Money Create(decimal amount, Currency currency)
-    {
-        return new Money(amount, currency);
-    }
+    public static Money Create(decimal amount, Currency currency) => new(amount, currency);
 
     public decimal Amount
     {
-        get => amount;
-        init => amount = value.NonNegative(nameof(Amount));
+        get => this.amount;
+        init => this.amount = value.NonNegative(nameof(this.Amount));
     }
 
     public Currency Currency { get; init; }
 
-    public bool IsZero => Amount == 0;
+    public bool IsZero => this.Amount == 0;
 
-    public bool CanAdd(Money other) => IsCompatible(other);
+    //public ImmutableMoneyBag Add(Money other) => ImmutableMoneyBag.Empty.Add(this).Add(other);
 
-    public Money Add(Money other) => this with { Amount = Amount + Compatible(other).Amount };
+    public bool CanAdd(Money other) => this.IsCompatible(other);
 
-    public bool CanSubstract(Money other) => IsCompatible(other);
+    public Money Add(Money other) => this with { Amount = this.Amount + this.Compatible(other).Amount };
 
-    public Money Substract(Money other) => this with { Amount = Amount - Compatible(other).Amount };
+    public bool CanSubtract(Money other) => this.IsCompatible(other);
+
+    public Money Subtract(Money other) => this with { Amount = this.Amount - this.Compatible(other).Amount };
 
     private Money Compatible(Money other) =>
-        IsCompatible(other) ?
+        this.IsCompatible(other) ?
         other :
         throw new ArgumentException($"Cannot combine currencies");
 
-    private bool IsCompatible(Money other) => Currency.Equals(other.Currency);
+    private bool IsCompatible(Money other) => this.Currency.Equals(other.Currency);
 
-    public int CompareTo(Money? other) => amount.CompareTo(other?.amount);
+    public int CompareTo(Money? other) => this.amount.CompareTo(other?.amount);
 
-    public override string ToString() => $"Currency: {Currency} - Amount: {Amount}";
+    public override string ToString() => $"Currency: {this.Currency} - Amount: {this.Amount}";
 }
