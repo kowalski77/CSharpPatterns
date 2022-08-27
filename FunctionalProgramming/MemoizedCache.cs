@@ -2,7 +2,7 @@
 
 public class MemoizedCache
 {
-    public static Currency[] Create(IEnumerable<string> currencyCodes, int size)
+    public static IReadOnlyList<Currency> Create(IEnumerable<string> currencyCodes, int size)
     {
         Dictionary<string, Currency> knownCurrencies = new(new CurrencyCodeEqualityComparer());
         var currencies = new Currency[size];

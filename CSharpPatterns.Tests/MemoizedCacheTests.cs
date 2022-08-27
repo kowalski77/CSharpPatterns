@@ -15,10 +15,10 @@ public class MemoizedCacheTests
         var currencyCodes = Currencies.TestCurrencies.Take(currencyTypes).RepeatRandomly().Codes();
 
         // Act
-        var result = MemoizedCache.Create(currencyCodes, size);
+        var currenciescollection = MemoizedCache.Create(currencyCodes, size);
 
         // Assert
-        result.Count().Should().Be(size);
-        result.Distinct().Count().Should().Be(currencyTypes);
+        currenciescollection.Count.Should().Be(size);
+        currenciescollection.Distinct().Count().Should().Be(currencyTypes);
     }
 }
