@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
-using FunctionalProgramming;
+using FunctionalProgramming.Dictionaries;
+using FunctionalProgramming.Models;
 
 namespace CSharpPatterns.Tests;
 

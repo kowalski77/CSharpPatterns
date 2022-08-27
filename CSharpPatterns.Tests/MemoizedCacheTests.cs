@@ -1,5 +1,7 @@
 ﻿using FluentAssertions;
-using FunctionalProgramming;
+using FunctionalProgramming.Caches;
+using FunctionalProgramming.Models;
+using FunctionalProgramming.Support;
 
 namespace CSharpPatterns.Tests;
 

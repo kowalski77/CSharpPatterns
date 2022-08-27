@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Immutable;
+using FunctionalProgramming.Models;
 
-namespace FunctionalProgramming;
+namespace FunctionalProgramming.Dictionaries;
 
 // only use immutable collections when it's a requirement
 public class ImmutableMoneyBag : IEnumerable<Money>

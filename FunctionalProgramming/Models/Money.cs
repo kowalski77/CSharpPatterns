@@ -1,4 +1,6 @@
-﻿namespace FunctionalProgramming;
+﻿using FunctionalProgramming.Support;
+
+namespace FunctionalProgramming.Models;
 
 public record Money : IComparable<Money>
 {

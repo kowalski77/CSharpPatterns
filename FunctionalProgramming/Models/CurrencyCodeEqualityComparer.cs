@@ -1,4 +1,4 @@
-namespace FunctionalProgramming;
+namespace FunctionalProgramming.Models;
 
 public class CurrencyCodeEqualityComparer : IEqualityComparer<string>
 {

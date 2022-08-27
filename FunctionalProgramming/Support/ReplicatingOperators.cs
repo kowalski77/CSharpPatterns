@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace FunctionalProgramming;
+namespace FunctionalProgramming.Support;
 
 public static class ReplicatingOperators
 {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
+using FunctionalProgramming.Models;
 
-namespace FunctionalProgramming;
+namespace FunctionalProgramming.Dictionaries;
 
 public class MoneyBag : IEnumerable<Money>
 {

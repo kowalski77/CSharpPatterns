@@ -1,4 +1,6 @@
-﻿namespace FunctionalProgramming;
+﻿using FunctionalProgramming.Models;
+
+namespace FunctionalProgramming.Dictionaries;
 
 public static class Operators
 {

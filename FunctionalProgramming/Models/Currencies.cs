@@ -1,4 +1,6 @@
-namespace FunctionalProgramming;
+using FunctionalProgramming.Support;
+
+namespace FunctionalProgramming.Models;
 
 public static class Currencies
 {
