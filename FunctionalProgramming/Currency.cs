@@ -1,4 +1,4 @@
-﻿namespace FunctionalProgramming.EnumerableImp;
+﻿namespace FunctionalProgramming;
 
 public readonly record struct Currency : IComparable<Currency>
 {

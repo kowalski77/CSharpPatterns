@@ -1,4 +1,4 @@
-﻿namespace FunctionalProgramming.EnumerableImp;
+﻿namespace FunctionalProgramming;
 
 public static class Operators
 {

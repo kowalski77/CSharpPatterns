@@ -1,4 +1,4 @@
-﻿namespace FunctionalProgramming.EnumerableImp;
+﻿namespace FunctionalProgramming;
 
 public record Money : IComparable<Money>
 {

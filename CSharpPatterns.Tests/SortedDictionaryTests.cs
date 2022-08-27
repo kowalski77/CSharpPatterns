@@ -1,9 +1,9 @@
 ﻿using FluentAssertions;
-using FunctionalProgramming.EnumerableImp;
+using FunctionalProgramming;
 
 namespace CSharpPatterns.Tests;
 
-public class EnumerableImpTests
+public class SortedDictionaryTests
 {
     [Fact]
     public void Sorted_dictionary_orders_money_by_currencies()

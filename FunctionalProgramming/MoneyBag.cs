@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace FunctionalProgramming.EnumerableImp;
+namespace FunctionalProgramming;
 
 public class MoneyBag : IEnumerable<Money>
 {
