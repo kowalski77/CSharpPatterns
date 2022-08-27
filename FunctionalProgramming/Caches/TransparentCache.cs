@@ -6,7 +6,8 @@ public class TransparentCache<T> where T : IEquatable<T>
 
     public T GetCached(T obj)
     {
-        if (!this.KnownObjects.TryGetValue(obj, out var result))
+        // HACK: technique to share references of objects to avoid preassure in CPU
+        if (!this.KnownObjects.TryGetValue(obj, out var result)) 
         {
             this.KnownObjects.Add(obj);
             result = obj;
