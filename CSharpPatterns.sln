@@ -53,7 +53,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PoC", "PoC", "{8412877F-AD2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataRetrieval.API", "DataRetrieval.API\DataRetrieval.API.csproj", "{1A4C3DB0-5206-4935-AD7B-A734B0BFE876}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfiniteScroll.Client", "InfiniteScroll.Client\InfiniteScroll.Client.csproj", "{77852408-4698-4E77-8F0D-CF24C950FD99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataRetrieval.Client", "DataRetrieval.Client\DataRetrieval.Client.csproj", "{77852408-4698-4E77-8F0D-CF24C950FD99}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncPatterns", "AsyncPatterns\AsyncPatterns.csproj", "{8A206E48-0BC3-4A1E-B8D9-7655469A6F5D}"
 EndProject
@@ -66,7 +66,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{ABB1BC2F-C211-4C6B-9E44-65782B4370B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionsSetup.API", "OptionsSetup.API\OptionsSetup.API.csproj", "{6644B371-99B9-4569-95FC-3D0CBC23AB7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionsSetup.API", "OptionsSetup.API\OptionsSetup.API.csproj", "{6644B371-99B9-4569-95FC-3D0CBC23AB7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,5 +1,5 @@
 ﻿using System.Text.Json;
-using InfiniteScroll.Client;
+using DataRetrieval.Client;
 
 Console.WriteLine("Press a key to start...");
 Console.ReadKey();

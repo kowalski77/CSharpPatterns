@@ -1,4 +1,4 @@
-﻿namespace InfiniteScroll.Client;
+﻿namespace DataRetrieval.Client;
 
 public class Person
 {
