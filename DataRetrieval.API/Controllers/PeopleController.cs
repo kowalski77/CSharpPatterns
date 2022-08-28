@@ -1,6 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
 using DataRetrieval.API.Data;
-using DataRetrieval.API.Pagination;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,20 +16,38 @@ public class PeopleController : ControllerBase
         this.context = context;
     }
 
-    [HttpGet("pagination")]
-    public IActionResult GetPeople()
+    [HttpGet]
+    public async Task<IActionResult> GetPeople()
     {
-        var people = context.People.AsEnumerable();
+        var people = await this.context.People.ToListAsync();
 
-        var pages = people.Paginate(Person.NameComparer, 10);
-        foreach (var page in pages)
-        {
-            var current = (IEnumerable<Person>)page;
-        }
-        
-        return Ok();
+        return this.Ok(people);
     }
-    
+
+    [HttpGet("v1/{id:guid}")]
+    public async Task<IActionResult> GetById(Guid id)
+    {
+        var person = await this.context.People.FirstOrDefaultAsync(p => p.Id == id);
+        if (person is null)
+        {
+            return this.NotFound();
+        }
+
+        return this.Ok(person);
+    }
+
+    [HttpGet("v2/{id:guid}")]
+    public async Task<IActionResult> GetById2(Guid id)
+    {
+        var person = await this.context.People.FindAsync(new object[] { id });
+        if (person is null)
+        {
+            return this.NotFound();
+        }
+
+        return this.Ok(person);
+    }
+
     [HttpGet("scroll")]
     public async IAsyncEnumerable<Person> GetPeople([EnumeratorCancellation] CancellationToken cancellationToken)
     {
@@ -39,13 +56,13 @@ public class PeopleController : ControllerBase
         var take = 10;
         while (!cancellationToken.IsCancellationRequested)
         {
-            var people = context.People
+            var people = this.context.People
                 .AsNoTracking()
                 .Skip(skip += 10)
                 .Take(take)
                 .AsAsyncEnumerable();
 
-            if (!await people.AnyAsync())
+            if (!await people.AnyAsync(cancellationToken: cancellationToken))
             {
                 break;
             }
