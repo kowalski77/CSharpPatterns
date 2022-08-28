@@ -19,3 +19,5 @@ app.MapControllers();
 await app.SeedPeopleAsync();
 
 app.Run();
+
+public partial class Program { }

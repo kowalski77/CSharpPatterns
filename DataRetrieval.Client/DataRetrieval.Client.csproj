@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,5 +6,18 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.3" />
+    <!--<PackageReference Include="Microsoft.Extensions.Logging.Configuration" Version="6.0.0" />-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--This reference is used for benchmark only-->
+    <ProjectReference Include="..\DataRetrieval.API\DataRetrieval.API.csproj">
+      <Aliases>TargetApi</Aliases>
+    </ProjectReference>
+  </ItemGroup>
 
 </Project>

@@ -28,24 +28,16 @@ public class PeopleController : ControllerBase
     public async Task<IActionResult> GetById(Guid id)
     {
         var person = await this.context.People.FirstOrDefaultAsync(p => p.Id == id);
-        if (person is null)
-        {
-            return this.NotFound();
-        }
 
-        return this.Ok(person);
+        return person is null ? this.NotFound() : this.Ok(person);
     }
 
     [HttpGet("v2/{id:guid}")]
     public async Task<IActionResult> GetById2(Guid id)
     {
         var person = await this.context.People.FindAsync(new object[] { id });
-        if (person is null)
-        {
-            return this.NotFound();
-        }
-
-        return this.Ok(person);
+        
+        return person is null ? this.NotFound() : this.Ok(person);
     }
 
     [HttpGet("scroll")]
