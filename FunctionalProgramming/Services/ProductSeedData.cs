@@ -2,6 +2,7 @@
 
 namespace FunctionalProgramming.Models;
 
+// This is not working properly
 public static class ProductSeedData
 {
     private static IEnumerable<(string name, decimal rate)> TestProductContent => new[]
