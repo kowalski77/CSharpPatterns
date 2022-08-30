@@ -22,17 +22,35 @@ public static class ReplicatingOperators
         while (true) yield return getNext(numbersGenerator);
     }
 
+    internal static IEnumerable<byte[]> GetRandomByteArrays(int length)
+    {
+        List<byte> pending = new();
+
+        foreach (var b in GetRandomBytes())
+        {
+            pending.Add(b);
+            if (pending.Count == length)
+            {
+                yield return pending.ToArray();
+                pending.Clear();
+            }
+        }
+    }
+
+    internal static IEnumerable<byte> GetRandomBytes() =>
+        GetRandomNumericValues(rng => rng.Next(256)).Select(i => (byte)i);
+
     internal static IEnumerable<string> GetRandomEnglishStrings(int length)
     {
         StringBuilder result = new();
 
         foreach (var c in GetRandomEnglishLetters())
         {
-            result.Append(c);
+            _ = result.Append(c);
             if (result.Length == length)
             {
                 yield return result.ToString();
-                result.Clear();
+                _ = result.Clear();
             }
         }
     }
