@@ -1,14 +1,20 @@
 ﻿using System.Diagnostics;
 using FunctionalProgramming.Caches;
+using FunctionalProgramming.Collections;
 using FunctionalProgramming.Models;
 using FunctionalProgramming.Services;
 using FunctionalProgramming.Support;
 
 //TransparentCache();
-ServiceWithDelay();
-CachedService();    
+//ServiceWithDelay();
+//CachedService();    
+
+var products = ProductSeedData.Products.Take(100)
+    .ToFullySortedList(Product.CostComparer)
+    .GetRange(10, 20);
 
 Console.ReadKey();
+
 
 static void ServiceWithDelay()
 {
@@ -30,7 +36,7 @@ static void CachedService()
 {
     IProductsService delayingProductsService = new DelayingProductsService(TimeSpan.FromMilliseconds(100));
     IProductsService cachingProductService = new CachingProductsService(delayingProductsService, 10);
-    
+
     var batchSize = 1000;
     for (var capacity = 0; capacity < 10; capacity++)
     {

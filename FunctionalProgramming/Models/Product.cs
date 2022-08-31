@@ -15,7 +15,8 @@ public class Product
 
     public string Name { get; }
 
-    public int ProductCode { get; }
-
     public Money Cost { get; }
+
+    public static IComparer<Product> CostComparer =>
+        Comparer<Product>.Create((a, b) => a.Cost.CompareTo(b.Cost));
 }
