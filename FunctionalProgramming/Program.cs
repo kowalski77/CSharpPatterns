@@ -5,7 +5,7 @@ using FunctionalProgramming.Services;
 using FunctionalProgramming.Support;
 
 //TransparentCache();
-//ServiceWithDelay();
+ServiceWithDelay();
 CachedService();    
 
 Console.ReadKey();
@@ -22,24 +22,24 @@ static void ServiceWithDelay()
         {
             _ = productsService.Find(product.Id);
         }
-        Console.WriteLine($"Cache[{capacity,2}]: Processed {batchSize} item(s) in {time.Elapsed}");
+        Console.WriteLine($"Cache[{capacity}]: Processed {batchSize} item(s) in {time.Elapsed}");
     }
 }
 
 static void CachedService()
 {
-    IProductsService productsService = new DelayingProductsService(TimeSpan.FromMilliseconds(100));
-
+    IProductsService delayingProductsService = new DelayingProductsService(TimeSpan.FromMilliseconds(100));
+    IProductsService cachingProductService = new CachingProductsService(delayingProductsService, 10);
+    
     var batchSize = 1000;
     for (var capacity = 0; capacity < 10; capacity++)
     {
-        IProductsService cached = productsService.Cached(capacity);
         var time = Stopwatch.StartNew();
-        foreach (var product in productsService.GetAll().Take(batchSize))
+        foreach (var product in cachingProductService.GetAll().Take(batchSize))
         {
-            _ = cached.Find(product.Id);
+            _ = cachingProductService.Find(product.Id);
         }
-        Console.WriteLine($"Cache[{capacity,2}]: Processed {batchSize} item(s) in {time.Elapsed}");
+        Console.WriteLine($"Cache[{capacity}]: Processed {batchSize} item(s) in {time.Elapsed}");
     }
 }
 
