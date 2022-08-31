@@ -1,6 +1,7 @@
-﻿using FunctionalProgramming.Support;
+﻿using FunctionalProgramming.Models;
+using FunctionalProgramming.Support;
 
-namespace FunctionalProgramming.Models;
+namespace FunctionalProgramming.Services;
 
 // This is not working properly
 public static class ProductSeedData
@@ -22,12 +23,8 @@ public static class ProductSeedData
         get
         {
             while (true)
-            {
                 foreach (var product in TestData)
-                {
                     yield return product;
-                }
-            }
         }
     }
 }

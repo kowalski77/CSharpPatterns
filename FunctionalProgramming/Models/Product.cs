@@ -19,4 +19,6 @@ public class Product
 
     public static IComparer<Product> CostComparer =>
         Comparer<Product>.Create((a, b) => a.Cost.CompareTo(b.Cost));
+
+    public override string ToString() => $"Id: {this.Id} - Name: {this.Name} - Cost: {this.Cost.Amount}";
 }

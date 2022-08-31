@@ -2,16 +2,16 @@
 using FunctionalProgramming.Caches;
 using FunctionalProgramming.Collections;
 using FunctionalProgramming.Models;
+using FunctionalProgramming.Pagination;
 using FunctionalProgramming.Services;
 using FunctionalProgramming.Support;
 
 //TransparentCache();
 //ServiceWithDelay();
 //CachedService();    
+//SimpleSortedList();
 
-var products = ProductSeedData.Products.Take(100)
-    .ToFullySortedList(Product.CostComparer)
-    .GetRange(10, 20);
+Pagination();
 
 Console.ReadKey();
 
@@ -67,4 +67,21 @@ static void TransparentCache()
 
     Console.WriteLine($"No caching: {nonCachedMemory:#,##0} bytes");
     Console.WriteLine($"    Cached: {cachedMemory:#,##0} bytes");
+}
+
+static void SimpleSortedList()
+{
+    var products = ProductSeedData.Products.Take(100)
+        .ToFullySortedList(Product.CostComparer)
+        .GetRange(10, 20);
+}
+
+static void Pagination()
+{
+    var paginatedProducts = ProductSeedData.Products.Take(15).Paginate(Product.CostComparer, 5);
+    var page = paginatedProducts[2];
+    foreach (var item in page)
+    {
+        Console.WriteLine(item);
+    }
 }
