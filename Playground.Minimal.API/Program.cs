@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Playground.Minimal.API;
+using Playground.Minimal.API.Cancellation;
 using Playground.Minimal.API.Products;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,8 @@ builder.Services.AddDbContext<ProductsContext>(options =>
 });
 
 var app = builder.Build();
+
+app.UseMiddleware<OperationCanceledMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -52,6 +55,8 @@ app.MapPost("/products", async (ProductsService productService, Product product)
     return Results.Ok(newlyProduct);
     
 }).WithName("post-product");
+
+app.RegisterSlowEndpoint();
 
 app.Run();
 
