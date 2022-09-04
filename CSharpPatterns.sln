@@ -68,6 +68,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionsSetup.API", "Options
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiagnosticsApp", "DiagnosticsApp\DiagnosticsApp.csproj", "{AF61C2E8-5C4E-4371-8D1A-73DF1FE1CA27}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiagnosticsExamples.Lib", "DiagnosticsExamples.Lib\DiagnosticsExamples.Lib.csproj", "{F1456FE5-658D-4860-BB5C-666513300D82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -166,6 +168,10 @@ Global
 		{AF61C2E8-5C4E-4371-8D1A-73DF1FE1CA27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF61C2E8-5C4E-4371-8D1A-73DF1FE1CA27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF61C2E8-5C4E-4371-8D1A-73DF1FE1CA27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1456FE5-658D-4860-BB5C-666513300D82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1456FE5-658D-4860-BB5C-666513300D82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1456FE5-658D-4860-BB5C-666513300D82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1456FE5-658D-4860-BB5C-666513300D82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -199,6 +205,7 @@ Global
 		{A50009F3-C11E-4029-BE93-DF4AC6F4B452} = {6BB9BBF4-E436-4C11-9FC7-4E2AF4FD856B}
 		{6644B371-99B9-4569-95FC-3D0CBC23AB7B} = {93984DCB-F4BD-4ABC-B323-E3436AAFB8FD}
 		{AF61C2E8-5C4E-4371-8D1A-73DF1FE1CA27} = {6BB9BBF4-E436-4C11-9FC7-4E2AF4FD856B}
+		{F1456FE5-658D-4860-BB5C-666513300D82} = {6BB9BBF4-E436-4C11-9FC7-4E2AF4FD856B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5A5D1502-888D-4928-9977-43AF0BBD18BB}
