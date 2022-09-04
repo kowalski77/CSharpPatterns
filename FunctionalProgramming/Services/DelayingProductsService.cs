@@ -11,7 +11,7 @@ public class DelayingProductsService : IProductsService
     public DelayingProductsService(TimeSpan searchDelay)
     {
         this.searchDelay = searchDelay;
-        this.IdToProduct = ProductSeedData.Products.Take(10).ToDictionary(p => p.Id);
+        this.IdToProduct = ProductSeedData.GetRawProducts.Take(10).ToDictionary(p => p.Id);
     }
 
     public Product Find(Guid id) => Delay(this.IdToProduct[id], this.searchDelay);

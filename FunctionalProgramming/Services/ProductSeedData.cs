@@ -3,7 +3,6 @@ using FunctionalProgramming.Support;
 
 namespace FunctionalProgramming.Services;
 
-// This is not working properly
 public static class ProductSeedData
 {
     private static IEnumerable<(string name, decimal rate)> TestProductContent => new[]
@@ -18,7 +17,7 @@ public static class ProductSeedData
         TestProductContent.Zip(Guids.TestData, (worker, guid) =>
         new Product(guid, worker.name, Currencies.Euro.Of(worker.rate)));
 
-    public static IEnumerable<Product> Products
+    public static IEnumerable<Product> GetRawProducts
     {
         get
         {
@@ -27,4 +26,7 @@ public static class ProductSeedData
                     yield return product;
         }
     }
+
+    private static IEnumerable<TimeSpan> WorkTimes =>
+        Timers.GetRandomTimeSpans(TimeSpan.FromMinutes(30), TimeSpan.FromHours(4));
 }

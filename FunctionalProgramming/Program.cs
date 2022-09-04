@@ -71,14 +71,14 @@ static void TransparentCache()
 
 static void SimpleSortedList()
 {
-    var products = ProductSeedData.Products.Take(100)
+    var products = ProductSeedData.GetRawProducts.Take(100)
         .ToFullySortedList(Product.CostComparer)
         .GetRange(10, 20);
 }
 
 static void Pagination()
 {
-    var paginatedProducts = ProductSeedData.Products.Take(15).Paginate(Product.CostComparer, 5);
+    var paginatedProducts = ProductSeedData.GetRawProducts.Take(15).Paginate(Product.CostComparer, 5);
     var page = paginatedProducts[2];
     foreach (var item in page)
     {

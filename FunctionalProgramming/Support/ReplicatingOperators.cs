@@ -22,6 +22,9 @@ public static class ReplicatingOperators
         while (true) yield return getNext(numbersGenerator);
     }
 
+    internal static IEnumerable<double> GetRandomDoubleValues(double min, double max) =>
+        GetRandomNumericValues(rng => rng.NextDouble()).Select(x => min + ((max - min) * x));
+
     internal static IEnumerable<byte[]> GetRandomByteArrays(int length)
     {
         List<byte> pending = new();
