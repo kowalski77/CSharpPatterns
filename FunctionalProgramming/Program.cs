@@ -2,6 +2,7 @@
 using FunctionalProgramming;
 using FunctionalProgramming.Caches;
 using FunctionalProgramming.Models;
+using FunctionalProgramming.Services;
 using FunctionalProgramming.Support;
 
 //TransparentCache();
@@ -15,4 +16,13 @@ using FunctionalProgramming.Support;
 //var hashSetCacheCurrencies = HashSetCache.Create(currencyCodes, count);
 //var simpleCacheCurrencies = SimpleCache.Create(currencyCodes, count);
 
-Console.ReadKey();
+//var productList = ProductSeedData.GetRawProducts.Take(10_000).ToList();
+//var productsHashSet = new HashSet<Product>(productList);
+//var productId = productList[4567].Id;
+
+//var productFromList = productList.First(x => x.Id == productId);
+//var productFromHashSet = productsHashSet.First(x => x.Id == productId);
+
+//Console.ReadKey();
+
+BenchmarkRunner.Run<Benchmarky>();
