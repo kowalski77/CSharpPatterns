@@ -66,9 +66,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{ABB1BC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionsSetup.API", "OptionsSetup.API\OptionsSetup.API.csproj", "{6644B371-99B9-4569-95FC-3D0CBC23AB7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiagnosticsApp", "DiagnosticsApp\DiagnosticsApp.csproj", "{AF61C2E8-5C4E-4371-8D1A-73DF1FE1CA27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiagnosticsApp", "DiagnosticsApp\DiagnosticsApp.csproj", "{AF61C2E8-5C4E-4371-8D1A-73DF1FE1CA27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiagnosticsExamples.Lib", "DiagnosticsExamples.Lib\DiagnosticsExamples.Lib.csproj", "{F1456FE5-658D-4860-BB5C-666513300D82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiagnosticsExamples.Lib", "DiagnosticsExamples.Lib\DiagnosticsExamples.Lib.csproj", "{F1456FE5-658D-4860-BB5C-666513300D82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

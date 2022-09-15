@@ -4,6 +4,7 @@ namespace FunctionalProgramming.Caches;
 
 public static class HashSetCache
 {
+    // Share references in collections to avoid presure in CPU
     public static IReadOnlyList<Currency> Create(IEnumerable<string> currencyCodes, int size)
     {
         ArgumentNullException.ThrowIfNull(currencyCodes);
