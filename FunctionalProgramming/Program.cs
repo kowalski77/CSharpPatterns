@@ -25,4 +25,4 @@ using FunctionalProgramming.Support;
 
 //Console.ReadKey();
 
-BenchmarkRunner.Run<Benchmarky>();
+BenchmarkRunner.Run<BenchmarkLoop>();

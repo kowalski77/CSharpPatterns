@@ -1,4 +1,5 @@
-﻿using BenchmarkDotNet.Attributes;
+﻿using System.Runtime.InteropServices;
+using BenchmarkDotNet.Attributes;
 using FunctionalProgramming.Models;
 using FunctionalProgramming.Services;
 
