@@ -1,0 +1,38 @@
+<Project>
+	<PropertyGroup Label="Package information">
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<Authors>Christian Aranda</Authors>
+	</PropertyGroup>
+	<PropertyGroup>
+		<!-- Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<!-- Embed source files that are not tracked by the source control manager in the PDB -->
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<!-- OR Embed symbols containing Source Link in the main file (exe/dll) -->
+		<DebugType>embedded</DebugType>
+		<!--  OR Build symbol package (.snupkg) to distribute the PDB containing Source Link -->
+		<!--<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>-->
+	</PropertyGroup>
+
+	<!--For local tests-->
+	<PropertyGroup>
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+	</PropertyGroup>
+	<!--For CICD-->
+	<!--<PropertyGroup Condition="'$(TF_BUILD)' == 'true'">
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+	</PropertyGroup>-->
+
+	<!--<PropertyGroup>
+		<TargetFrameworkMonikerAssemblyAttributesPath>$([System.IO.Path]::Combine('$(IntermediateOutputPath)','$(TargetFrameworkMoniker).AssemblyAttributes$(DefaultLanguageSourceExtension)'))</TargetFrameworkMonikerAssemblyAttributesPath>
+	</PropertyGroup>
+	<ItemGroup>
+		--><!--https://github.com/dotnet/sourcelink/issues/572--><!--
+		<EmbeddedFiles Include="$(GeneratedAssemblyInfoFile)"/>
+		<EmbeddedFiles Include="$(GeneratedGlobalUsingsFile)"/>
+		<EmbeddedFiles Include="$(TargetFrameworkMonikerAssemblyAttributesPath)"/>
+	</ItemGroup>-->
+
+	<!--dotnet pack SharedKernel.csproj -c Release -o .\artifacts (double slash)include-symbols-->
+</Project>
