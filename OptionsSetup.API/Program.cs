@@ -4,14 +4,15 @@ using OptionsSetup.API.Two;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// option One --> Validation startup filter + data annotations
+// option old --> Validation startup filter + data annotations
 //builder.Services.ConfigureOptions<FooOptionsSetup>();
 //or
 //builder.Services.Configure<FooOptions>(builder.Configuration.GetSection(nameof(FooOptions)));
 //builder.Services.AddTransient<IStartupFilter, SettingValidationStartupFilter>();
 // builder.Services.AddSingleton<IValidatable>(resolver =>
 //resolver.GetRequiredService<IOptions<FooOptions>>().Value);
-// or
+
+// option one
 builder.Services.AddOptions<FooOptions>()
     .Bind(builder.Configuration.GetSection(nameof(FooOptions)))
     .ValidateDataAnnotations()
@@ -24,8 +25,6 @@ builder.Services.AddSingleton(resolver =>
 // option Two (validation when resolving!!!!!)
 builder.Services.Configure<BarOptions>(builder.Configuration.GetSection(nameof(BarOptions)));
 builder.Services.AddSingleton<IValidateOptions<BarOptions>, BarOptionsValidation>();
-
-// TODO: option 3 (Julio)
 
 var app = builder.Build();
 
