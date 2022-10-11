@@ -1,6 +1,5 @@
 ﻿using DesignPatterns.Creational.Prototype;
 using FluentAssertions;
-using Xunit;
 
 namespace CSharpPatterns.Tests;
 
