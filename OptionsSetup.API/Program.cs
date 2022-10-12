@@ -22,16 +22,15 @@ var builder = WebApplication.CreateBuilder(args);
 // option one with extension 
 builder.Services.AddWithDataAnnotationValidation<FooOptions>(nameof(FooOptions));
 
-// (optional, if you want to avoid IOptions when resolving)
-builder.Services.AddSingleton(resolver =>
-    resolver.GetRequiredService<IOptions<FooOptions>>().Value);
-
 // option Two (validation when resolving!)
-builder.Services.Configure<BarOptions>(builder.Configuration.GetSection(nameof(BarOptions)));
-builder.Services.AddSingleton<IValidateOptions<BarOptions>, BarOptionsValidation>();
+builder.Services.AddWithValidateOptions<BarOptions, BarOptionsValidation>(nameof(BarOptions));
 
 // option three (with fluent validation!)
 builder.Services.AddWithFluentValidation<Settings, SettingsValidator>(nameof(Settings));
+
+// (optional, if you want to avoid IOptions when resolving)
+builder.Services.AddSingleton(resolver =>
+    resolver.GetRequiredService<IOptions<FooOptions>>().Value);
 
 var app = builder.Build();
 
