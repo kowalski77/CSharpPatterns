@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Options;
 using OptionsSetup.API.One;
+using OptionsSetup.API.Three;
 using OptionsSetup.API.Two;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,18 +14,24 @@ var builder = WebApplication.CreateBuilder(args);
 //resolver.GetRequiredService<IOptions<FooOptions>>().Value);
 
 // option one
-builder.Services.AddOptions<FooOptions>()
-    .Bind(builder.Configuration.GetSection(nameof(FooOptions)))
-    .ValidateDataAnnotations()
-    .ValidateOnStart();
+//builder.Services.AddOptions<FooOptions>()
+//    .Bind(builder.Configuration.GetSection(nameof(FooOptions)))
+//    .ValidateDataAnnotations()
+//    .ValidateOnStart();
+
+// option one with extension 
+builder.Services.AddWithDataAnnotationValidation<FooOptions>(nameof(FooOptions));
 
 // (optional, if you want to avoid IOptions when resolving)
 builder.Services.AddSingleton(resolver =>
     resolver.GetRequiredService<IOptions<FooOptions>>().Value);
 
-// option Two (validation when resolving!!!!!)
+// option Two (validation when resolving!)
 builder.Services.Configure<BarOptions>(builder.Configuration.GetSection(nameof(BarOptions)));
 builder.Services.AddSingleton<IValidateOptions<BarOptions>, BarOptionsValidation>();
+
+// option three (with fluent validation!)
+builder.Services.AddWithFluentValidation<Settings, SettingsValidator>(nameof(Settings));
 
 var app = builder.Build();
 
