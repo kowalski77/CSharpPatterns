@@ -12,6 +12,6 @@ public class Currency
     public string Code
     {
         get => code;
-        set => code = value.NonEmpty(nameof(Code)).ToUpper();
+        set => code = value.NonEmpty().ToUpper();
     }
 }

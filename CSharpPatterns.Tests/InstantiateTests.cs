@@ -34,4 +34,47 @@ public class InstantiateTests
         sut.Name.Should().Be(newName);
         sut.Age.Should().Be(newAge);
     }
+
+    [Fact]
+    public void Struct_with_validation_in_properties_ensure_invariants()
+    {
+        // Arrange
+        Func<Name> sut = () => new Name() { Value = string.Empty };
+
+        // Assert
+        sut.Should().Throw<ArgumentException>().WithMessage("value");
+    }
+
+    [Fact]
+    public void Struct_with_validation_in_properties_ensure_invariants_when_using_constructor()
+    {
+        // Act
+        Func<Name> sut = () => Name.Create(string.Empty);
+
+        // Assert
+        sut.Should().Throw<ArgumentException>().WithMessage("value");
+    }
+
+    [Fact]
+    public void Struct_with_validation_in_properties_ensure_invariants_when_using_default_Constructor()
+    {
+        // Act
+        Func<Name> sut = () => new Name();
+
+        // Assert
+        sut.Should().Throw<ArgumentException>().WithMessage("value");
+    }
+
+    [Fact]
+    public void Struct_with_validation_in_properties_ensure_invariants_when_using_With_keyword()
+    {
+        // Arrange
+        Name name = new("John");
+
+        // Act
+        Func<Name> sut = () => name with { Value = string.Empty };
+
+        // Assert
+        sut.Should().Throw<ArgumentException>().WithMessage("value");
+    }
 }

@@ -16,8 +16,5 @@ public static class Guards
     }
 
     [DoesNotReturn]
-    private static void Throw(string? paramName)
-    {
-        throw new ArgumentOutOfRangeException(paramName);
-    }
+    private static void Throw(string? paramName) => throw new ArgumentOutOfRangeException(paramName);
 }

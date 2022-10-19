@@ -1,10 +1,12 @@
+using System.Runtime.CompilerServices;
+
 namespace Playground.Invariants;
 
 public static class ArgumentExtensions
 {
-    public static string NonEmpty(this string value, string name) =>
+    public static string NonEmpty(this string value, [CallerArgumentExpression("value")] string? paramName = null) =>
         !string.IsNullOrWhiteSpace(value) ? value
-        : throw new ArgumentException(name);
+        : throw new ArgumentException(paramName);
 
     public static decimal NonNegative(this decimal value, string name) =>
         value >= 0 ? value
