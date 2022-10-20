@@ -4,7 +4,7 @@ namespace Playground.Instantiate;
 
 // Immutable, cannot update properties without creating a new instance
 // When not using Result approach in project
-public readonly record struct Name
+public readonly record  struct Name
 {
     private readonly string value = null!;
 

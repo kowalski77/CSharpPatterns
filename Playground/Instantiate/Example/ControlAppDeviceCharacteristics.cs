@@ -1,40 +1,37 @@
-﻿namespace Playground.Instantiate.Example;
+﻿using Playground.Invariants;
+
+namespace Playground.Instantiate.Example;
 
 public record ControlAppDeviceCharacteristics : IDeviceCharacteristics
 {
-    public ControlAppDeviceCharacteristics(
-        string appId,
-        string appVersion,
-        string appConfiguration,
-        MobileHardwareInfo hardwareInfo,
-        MobileSoftwareInfo softwareInfo,
-        string region,
-        string language,
-        IDictionary<string, object> extensions)
+    private AppSettings appSettings = default!;
+    private MobileHardwareInfo mobileHardwareInfo = default!;
+    private MobileSoftwareInfo mobileSoftwareInfo = default!;
+    private RegionSettings regionSettings = default!;
+
+    public AppSettings AppSettings
     {
-        this.AppId = appId;
-        this.AppVersion = appVersion;
-        this.AppConfiguration = appConfiguration;
-        this.HardwareInfo = hardwareInfo;
-        this.SoftwareInfo = softwareInfo;
-        this.Region = region;
-        this.Language = language;
-        this.Extensions = extensions;
+        get => this.appSettings;
+        init => this.appSettings = value.NonNull();
     }
 
-    public string AppId { get; init; }
+    public MobileHardwareInfo HardwareInfo
+    {
+        get => this.mobileHardwareInfo;
+        init => this.mobileHardwareInfo = value.NonNull();
+    }
 
-    public string AppVersion { get; init; }
+    public MobileSoftwareInfo SoftwareInfo
+    {
+        get => this.mobileSoftwareInfo;
+        init => this.mobileSoftwareInfo = value.NonNull();
+    }
 
-    public string AppConfiguration { get; init; }
+    public RegionSettings RegionSettings
+    {
+        get => this.regionSettings;
+        init => this.regionSettings = value.NonNull();
+    }
 
-    public MobileHardwareInfo HardwareInfo { get; init; }
-
-    public MobileSoftwareInfo SoftwareInfo { get; init; }
-
-    public string Region { get; init; }
-
-    public string Language { get; init; }
-
-    public IDictionary<string, object> Extensions { get; set; }
+    public IDictionary<string, object>? Extensions { get; init; }
 }

@@ -2,5 +2,5 @@
 
 public interface IDeviceCharacteristics
 {
-    public IDictionary<string, object> Extensions { get; set; }
+    public IDictionary<string, object>? Extensions { get; init; }
 }

@@ -1,14 +1,16 @@
-﻿namespace Playground.Instantiate.Example;
+﻿using Playground.Invariants;
 
-public class DeviceState : IDeviceState
+namespace Playground.Instantiate.Example;
+
+public record DeviceState : IDeviceState
 {
-    public DeviceState(IDeviceCharacteristics characteristics, DateTime timeStamp)
+    private IDeviceCharacteristics characteristics = default!;
+
+    public IDeviceCharacteristics Characteristics
     {
-        this.Characteristics = characteristics;
-        this.TimeStamp = timeStamp;
+        get => this.characteristics;
+        init => this.characteristics = value.NonNull();
     }
 
-    public IDeviceCharacteristics Characteristics { get; private set; }
-
-    public DateTime TimeStamp { get; private set; }
+    public DateTime TimeStamp { get; init; }
 }

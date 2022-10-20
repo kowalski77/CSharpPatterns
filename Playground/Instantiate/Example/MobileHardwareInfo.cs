@@ -1,14 +1,21 @@
-﻿namespace Playground.Instantiate.Example;
+﻿using Playground.Invariants;
+
+namespace Playground.Instantiate.Example;
 
 public record MobileHardwareInfo
 {
-    public MobileHardwareInfo(string make, string model)
+    private string make = default!;
+    private string model = default!;
+
+    public string Make
     {
-        this.Make = make;
-        this.Model = model;
+        get => this.make;
+        init => this.make = value.NonEmpty();
     }
 
-    public string Make { get; init; }
-
-    public string Model { get; init; }
+    public string Model
+    {
+        get => this.model;
+        init => this.model = value.NonEmpty();
+    }
 }

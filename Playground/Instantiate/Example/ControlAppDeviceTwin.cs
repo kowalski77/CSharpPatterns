@@ -2,13 +2,14 @@
 
 public class ControlAppDeviceTwin : DeviceTwin
 {
-    public ControlAppDeviceTwin(string id = "", IDeviceState state = default!) : base(id, state)
+    public ControlAppDeviceTwin()
     {
     }
 
-    public ControlAppDeviceTwin(ControlAppDeviceTwin other) 
-        : this(other.Id, other.State)
+    public ControlAppDeviceTwin(ControlAppDeviceTwin other)
     {
+        this.State = other.State;
+        this.RegistrationId = other.RegistrationId;
     }
 
     public override DeviceType DeviceType => DeviceType.ControlApp;

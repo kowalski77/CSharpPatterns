@@ -7,7 +7,11 @@ public static class ArgumentExtensions
     public static T NonNull<T>(this T value, [CallerArgumentExpression("value")] string? paramName = null) =>
         value ?? 
         throw new ArgumentNullException(paramName);
-    
+
+    public static Guid NonEmpty(this Guid value, [CallerArgumentExpression("value")] string? paramName = null) =>
+    value != Guid.Empty ? value
+    : throw new ArgumentException(paramName);
+
     public static string NonEmpty(this string value, [CallerArgumentExpression("value")] string? paramName = null) =>
         !string.IsNullOrWhiteSpace(value) ? value
         : throw new ArgumentException(paramName);

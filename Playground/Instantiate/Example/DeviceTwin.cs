@@ -4,17 +4,27 @@ namespace Playground.Instantiate.Example;
 
 public abstract class DeviceTwin
 {
-    protected DeviceTwin(string id, IDeviceState state)
+    private Guid id;
+    private IDeviceState deviceState = default!;
+    private Guid registrationId;
+
+    public Guid Id
     {
-        this.Id = id.NonEmpty();
-        this.State = state.NonNull();
+        get => this.id;
+        init => this.id = value.NonEmpty();
     }
 
-    public string Id { get; init; }
+    public IDeviceState State
+    {
+        get => this.deviceState;
+        init => this.deviceState = value.NonNull();
+    }
 
-    public IDeviceState State { get; init; }
-
-    public string? RegistrationId { get; init; }
+    public Guid RegistrationId
+    {
+        get => this.registrationId;
+        init => this.registrationId = value.NonEmpty();
+    }
 
     public abstract DeviceType DeviceType { get; }
 

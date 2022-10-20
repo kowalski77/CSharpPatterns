@@ -29,3 +29,14 @@ public class CommonPerson
     // we would have to change as many separate method calls and sustain construction of equally many new objects
     public CommonPerson WithAge(int age) => new(this.Name, age);
 }
+
+public class Runner
+{
+    public void Run()
+    {
+        var commonPerson = new CommonPerson
+        {
+            Age = 31, Name = "Tim"
+        };
+    }
+}

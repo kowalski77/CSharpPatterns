@@ -1,15 +1,21 @@
-﻿namespace Playground.Instantiate.Example;
+﻿using Playground.Invariants;
+
+namespace Playground.Instantiate.Example;
 
 public record MobileSoftwareInfo
 {
-    public MobileSoftwareInfo(
-        string operatingSystem, string operatingSystemVersion)
+    private string operatingSystem = default!;
+    private string operatingSystemVersion = default!;
+
+    public string OperatingSystem
     {
-        this.OperatingSystem = operatingSystem;
-        this.OperatingSystemVersion = operatingSystemVersion;
+        get => this.operatingSystem;
+        init => this.operatingSystem = value.NonEmpty();
     }
 
-    public string OperatingSystem { get; init; }
-
-    public string OperatingSystemVersion { get; init; }
+    public string OperatingSystemVersion
+    {
+        get => this.operatingSystemVersion;
+        init => this.operatingSystemVersion = value.NonEmpty();
+    }
 }
