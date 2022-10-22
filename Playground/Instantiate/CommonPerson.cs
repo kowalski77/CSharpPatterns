@@ -2,7 +2,7 @@
 
 // Immutable, cannot update properties without creating a new instance
 // For classes that does not want the ceremony on the constructor passing all the arguments.
-// init initialization
+// init initialization // not easy compatible with validation in properties
 public class CommonPerson
 {
     public CommonPerson(string name = "", int age = 0)
