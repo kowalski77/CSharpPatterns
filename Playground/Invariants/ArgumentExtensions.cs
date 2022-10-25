@@ -1,11 +1,12 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
 namespace Playground.Invariants;
 
 public static class ArgumentExtensions
 {
-    public static T NonNull<T>(this T value, [CallerArgumentExpression("value")] string? paramName = null) =>
-        value ?? 
+    public static T NonNull<T>([NotNull] this T value, [CallerArgumentExpression("value")] string? paramName = null) =>
+        value ??
         throw new ArgumentNullException(paramName);
 
     public static Guid NonEmpty(this Guid value, [CallerArgumentExpression("value")] string? paramName = null) =>
@@ -21,6 +22,10 @@ public static class ArgumentExtensions
         : throw new ArgumentException(name);
 
     public static int NonNegative(this int value, string name) =>
+        value >= 0 ? value
+        : throw new ArgumentException(name);
+
+    public static double NonNegative(this double value, string name) =>
         value >= 0 ? value
         : throw new ArgumentException(name);
 
