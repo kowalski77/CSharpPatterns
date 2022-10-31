@@ -9,8 +9,8 @@ public class Demo
 
         var car = carBuilder.Build();
     }
-
-    private static void BuildVwSantana1995(ICarBuilder carBuilder)
+    
+    private void BuildVwSantana1995(ICarBuilder carBuilder)
     {
         carBuilder
             .SetMake("VW Santana")
