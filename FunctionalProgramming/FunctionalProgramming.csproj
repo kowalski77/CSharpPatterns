@@ -9,11 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.13.2" />
+    <Compile Remove="BuiltInCollections\**" />
+    <EmbeddedResource Remove="BuiltInCollections\**" />
+    <None Remove="BuiltInCollections\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="BuiltInCollections\" />
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.2" />
   </ItemGroup>
 
 </Project>
