@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Creational.Builder;
+﻿namespace DesignPatterns.Creational.Builder.Simple;
 
 public class Demo
 {
@@ -9,7 +9,7 @@ public class Demo
 
         var car = carBuilder.Build();
     }
-    
+
     private void BuildVwSantana1995(ICarBuilder carBuilder)
     {
         carBuilder

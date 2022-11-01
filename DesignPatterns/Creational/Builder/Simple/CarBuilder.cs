@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Creational.Builder;
+﻿namespace DesignPatterns.Creational.Builder.Simple;
 
 public class CarBuilder : ICarBuilder
 {
