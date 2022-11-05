@@ -9,6 +9,6 @@ public class OrderPurchase
     }
 
     public Customer Customer { get; }
-    
+
     public Order Order { get; }
 }

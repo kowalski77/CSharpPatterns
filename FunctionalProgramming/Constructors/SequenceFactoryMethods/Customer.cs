@@ -19,10 +19,8 @@ public class Customer
     public OrderPurchase Purchase(Order order)
     {
         if (!this.CanAfford(order))
-        {
             throw new ArgumentException("Insufficient credit");
-        }
-        
+
         return new(this, order);
     }
 }

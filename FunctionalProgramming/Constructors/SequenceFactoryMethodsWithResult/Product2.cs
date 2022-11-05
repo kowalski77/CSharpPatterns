@@ -1,8 +1,8 @@
-﻿namespace FunctionalProgramming.Constructors.SequenceFactoryMethods;
+﻿namespace FunctionalProgramming.Constructors.SequenceFactoryMethodsWithResult;
 
-public class Product
+public class Product2
 {
-    public Product(string name, decimal price)
+    public Product2(string name, decimal price)
     {
         this.Name = name;
         this.Price = price;
