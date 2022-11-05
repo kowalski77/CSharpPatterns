@@ -1,10 +1,10 @@
 ﻿using FunctionalProgramming.Guards;
 
-namespace FunctionalProgramming.Constructors;
+namespace FunctionalProgramming.Constructors.ObjectFiltering;
 
 public class Exam
 {
-    private Exam(Subject subject, Professor administrator) => 
+    private Exam(Subject subject, Professor administrator) =>
         (this.Subject, this.Administrator) = (subject.NonNull(), administrator.NonNull());
 
     public Subject Subject { get; }

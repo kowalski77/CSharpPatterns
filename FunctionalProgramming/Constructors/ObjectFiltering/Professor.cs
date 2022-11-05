@@ -1,4 +1,4 @@
-﻿namespace FunctionalProgramming.Constructors;
+﻿namespace FunctionalProgramming.Constructors.ObjectFiltering;
 
 public class Professor
 {

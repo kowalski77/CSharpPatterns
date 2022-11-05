@@ -1,4 +1,4 @@
-﻿namespace FunctionalProgramming.Constructors;
+﻿namespace FunctionalProgramming.Constructors.ObjectFiltering;
 
 public class ExamApplication
 {
@@ -14,8 +14,8 @@ public class ExamApplication
 
     public static IEnumerable<ExamApplication> TryApplyFor(
         Student candidate, IEnumerable<Exam> exams) =>
-        candidate is null ? 
-        Enumerable.Empty<ExamApplication>() : 
+        candidate is null ?
+        Enumerable.Empty<ExamApplication>() :
         exams
           .Where(exam => exam is not null)
           .Where(candidate.CanApplyFor)
