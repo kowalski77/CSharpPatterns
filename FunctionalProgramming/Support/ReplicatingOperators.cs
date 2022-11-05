@@ -49,11 +49,11 @@ public static class ReplicatingOperators
 
         foreach (var c in GetRandomEnglishLetters())
         {
-            _ = result.Append(c);
+            result.Append(c);
             if (result.Length == length)
             {
                 yield return result.ToString();
-                _ = result.Clear();
+                result.Clear();
             }
         }
     }
