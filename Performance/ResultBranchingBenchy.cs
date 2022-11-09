@@ -24,15 +24,15 @@ public class ResultBranchingBenchy
         return transformResult.Value;
     }
 
-    [Benchmark]
-    public Result<int> HandleWithLambdas()
-    {
-        var result = Result.Init
-            .Start(() => GetNumber(5))
-            .OnSuccess(Transform);
+    //[Benchmark]
+    //public Result<int> HandleWithLambdas()
+    //{
+    //    var result = Result.Init
+    //        .Start(() => GetNumber(5))
+    //        .OnSuccess(Transform);
 
-        return result;
-    }
+    //    return result;
+    //}
 
     private static Result<int> GetNumber(int id)
     {
