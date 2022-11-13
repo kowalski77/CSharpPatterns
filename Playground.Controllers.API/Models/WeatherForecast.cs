@@ -1,4 +1,4 @@
-namespace Playground.Controllers.API;
+namespace Playground.Controllers.API.Models;
 
 public class WeatherForecast
 {

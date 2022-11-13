@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using Playground.Controllers.API.Models;
 
 namespace Playground.Controllers.API.Controllers;
 

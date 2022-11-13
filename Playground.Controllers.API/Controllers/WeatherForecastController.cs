@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Playground.Controllers.API.ActionFilters;
+using Playground.Controllers.API.Models;
 
 namespace Playground.Controllers.API.Controllers;
 
@@ -20,18 +21,23 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<WeatherForecast> Get()
+    [ContinuationToken]
+    public ActionResult<WeatherForecastCollection> Get()
     {
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        var weatherForecastCollection = new WeatherForecastCollection(
+            Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            {
+                Date = DateTime.Now.AddDays(index),
+                TemperatureC = Random.Shared.Next(-20, 55),
+                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+            }).ToList())
         {
-            Date = DateTime.Now.AddDays(index),
-            TemperatureC = Random.Shared.Next(-20, 55),
-            Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-        })
-        .ToArray();
+            ContinuationToken = Guid.NewGuid().ToString()
+        };
+
+        return this.Ok(weatherForecastCollection);
     }
 
-    //[ServiceFilter(typeof(ValidationFilterAttribute))]
     [HttpPost(Name = "PostWeatherForecast")]
     public IActionResult Post([FromBody] WeatherForecast weatherForecast)
     {

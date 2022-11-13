@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
+﻿using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace Playground.Controllers.API.ActionFilters;
 
@@ -23,7 +22,7 @@ public class ValidationFilterAttribute : IActionFilter
         //{
         //    return;
         //}
-        
+
         //context.Result = new BadRequestObjectResult(context.ModelState);
     }
 }
