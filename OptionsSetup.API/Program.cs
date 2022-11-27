@@ -29,8 +29,8 @@ builder.Services.AddWithValidateOptions<BarOptions, BarOptionsValidation>(nameof
 builder.Services.AddWithFluentValidation<Settings, SettingsValidator>(nameof(Settings));
 
 // (optional, if you want to avoid IOptions when resolving)
-builder.Services.AddSingleton(resolver =>
-    resolver.GetRequiredService<IOptions<FooOptions>>().Value);
+//builder.Services.AddSingleton(resolver =>
+//    resolver.GetRequiredService<IOptions<FooOptions>>().Value);
 
 var app = builder.Build();
 
@@ -41,9 +41,9 @@ var summaries = new[]
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
 
-app.MapGet("/weatherforecast", (FooOptions fooOptions, IOptions<BarOptions> barOptions) =>
+app.MapGet("/weatherforecast", (IOptionsMonitor<FooOptions> fooOptions, IOptions<BarOptions> barOptions) =>
 {
-    var foo = fooOptions;
+    var foo = fooOptions.CurrentValue;
     var bar = barOptions.Value;
 
     var forecast = Enumerable.Range(1, 5).Select(index =>
