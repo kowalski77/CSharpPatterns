@@ -13,4 +13,6 @@ public class Product
     public decimal Price { get; }
 
     public int Stock { get; } = 5;
+
+    public bool IsFeatured { get; set; }
 }

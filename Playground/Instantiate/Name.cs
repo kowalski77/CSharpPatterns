@@ -25,3 +25,11 @@ public readonly record  struct Name
         init => this.value = value.NonEmpty();
     }
 }
+
+public class Test
+{
+    public void Fact()
+    {
+        var name = new Name();
+    }
+}
