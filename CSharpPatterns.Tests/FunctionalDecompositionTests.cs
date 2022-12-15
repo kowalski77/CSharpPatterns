@@ -10,7 +10,7 @@ public class FunctionalDecompositionTests
     {
         // Arrange
         var context = new CommerceContext();
-        var productService = new ProductService(context);
+        var productService = new FunctionalProductService(context);
 
         // Act
         var featuredProducts = productService.GetFeaturedProducts(true);
@@ -26,7 +26,7 @@ public class FunctionalDecompositionTests
     {
         // Arrange
         var context = new CommerceContext();
-        var productService = new ProductService(context);
+        var productService = new FunctionalProductService(context);
 
         // Act
         var featuredProducts = productService.GetFeaturedProducts(false);
