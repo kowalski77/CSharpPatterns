@@ -1,5 +1,4 @@
 ﻿using FunctionalProgramming.Constructors.SequenceFactoryMethods;
-using FunctionalProgramming.Guards;
 
 namespace FunctionalProgramming.FunctionalDecomposition;
 
@@ -7,25 +6,20 @@ namespace FunctionalProgramming.FunctionalDecomposition;
 public class FunctionalProductService
 {
     private readonly CommerceContext context;
+    private readonly DiscountGeneratorFactory discountGeneratorFactory;
 
-    public FunctionalProductService(CommerceContext context)
+    public FunctionalProductService(CommerceContext context, DiscountGeneratorFactory discountGeneratorFactory)
     {
         this.context = context;
+        this.discountGeneratorFactory = discountGeneratorFactory;
     }
 
     public IEnumerable<Product> GetFeaturedProducts(bool isCustomerPrefered) =>
         this.context.Products
             .Where(p => p.IsFeatured)
-            .WithDiscount(GetDiscount(isCustomerPrefered));
+            .WithDiscount(this.GetDiscount(isCustomerPrefered));
 
-    private static decimal GetDiscount(bool isCustomerPrefered) => isCustomerPrefered ? 0.1m : 0.0m;
-}
-
-public static class ProductExtensions
-{
-    public static IEnumerable<Product> WithDiscount(this IEnumerable<Product> products, decimal discount) =>
-        products.Select(p => p.ApplyDiscount(discount));
-
-    private static Product ApplyDiscount(this Product product, decimal discount) =>
-        new(product.NonNull().Name, product.Price * (1 - discount));
+    private Discount GetDiscount(bool isCustomerPrefered) => isCustomerPrefered ?
+        this.discountGeneratorFactory.Prefered() :
+        this.discountGeneratorFactory.NotPrefered();
 }
