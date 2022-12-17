@@ -9,11 +9,13 @@ public sealed class DiscountOptions
     {
         new DiscountFormat
         {
+            Prefered = true,
             Name = CustomerPrefered,
             Value = 0.1m
         },
         new DiscountFormat
         {
+            Prefered = false,
             Name = CustomerNotPrefered,
             Value = 0.0m
         }
@@ -22,7 +24,9 @@ public sealed class DiscountOptions
 
 public sealed class DiscountFormat
 {
-    public string Name { get; init; } = string.Empty;
+    public required bool Prefered { get; init; }
 
-    public decimal Value { get; init; }
+    public required string Name { get; init; }
+
+    public required decimal Value { get; init; }
 }

@@ -8,7 +8,9 @@ public class FunctionalProductController
     private readonly CommerceContext context;
     private readonly DiscountGeneratorFactory discountGeneratorFactory;
 
-    public FunctionalProductController(CommerceContext context, DiscountGeneratorFactory discountGeneratorFactory)
+    public FunctionalProductController(
+        CommerceContext context,
+        DiscountGeneratorFactory discountGeneratorFactory)
     {
         this.context = context;
         this.discountGeneratorFactory = discountGeneratorFactory;
@@ -17,5 +19,5 @@ public class FunctionalProductController
     public IEnumerable<Product> GetFeaturedProducts(bool isCustomerPrefered) =>
         this.context.Products
             .Where(p => p.IsFeatured)
-            .WithDiscount(this.discountGeneratorFactory, isCustomerPrefered);
+            .WithDiscount(this.discountGeneratorFactory.GetDiscountGenerator(isCustomerPrefered)());
 }
