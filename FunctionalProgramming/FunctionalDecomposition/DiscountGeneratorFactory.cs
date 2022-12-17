@@ -2,6 +2,8 @@
 
 namespace FunctionalProgramming.FunctionalDecomposition;
 
+public delegate Discount DiscountGenerator();
+
 public class DiscountGeneratorFactory
 {
     private readonly IDictionary<string, DiscountGenerator> generators;

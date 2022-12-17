@@ -11,7 +11,7 @@ public class FunctionalDecompositionTests
         // Arrange
         var context = new CommerceContext();
         var discountGeneratorFactory = new DiscountGeneratorFactory(new DiscountOptions());
-        var productService = new FunctionalProductService(context, discountGeneratorFactory);
+        var productService = new FunctionalProductController(context, discountGeneratorFactory);
 
         // Act
         var featuredProducts = productService.GetFeaturedProducts(true);
@@ -28,7 +28,7 @@ public class FunctionalDecompositionTests
         // Arrange
         var context = new CommerceContext();
         var discountGeneratorFactory = new DiscountGeneratorFactory(new DiscountOptions());
-        var productService = new FunctionalProductService(context ,discountGeneratorFactory);
+        var productService = new FunctionalProductController(context ,discountGeneratorFactory);
 
         // Act
         var featuredProducts = productService.GetFeaturedProducts(false);

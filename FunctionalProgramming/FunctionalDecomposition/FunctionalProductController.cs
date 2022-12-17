@@ -3,12 +3,12 @@
 namespace FunctionalProgramming.FunctionalDecomposition;
 
 // Functional style
-public class FunctionalProductService
+public class FunctionalProductController
 {
     private readonly CommerceContext context;
     private readonly DiscountGeneratorFactory discountGeneratorFactory;
 
-    public FunctionalProductService(CommerceContext context, DiscountGeneratorFactory discountGeneratorFactory)
+    public FunctionalProductController(CommerceContext context, DiscountGeneratorFactory discountGeneratorFactory)
     {
         this.context = context;
         this.discountGeneratorFactory = discountGeneratorFactory;

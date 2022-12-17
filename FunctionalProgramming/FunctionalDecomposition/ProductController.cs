@@ -3,11 +3,11 @@
 namespace FunctionalProgramming.FunctionalDecomposition;
 
 // NOTE: this is not correct
-public class ProductService
+public class ProductController
 {
     private readonly CommerceContext context;
 
-    public ProductService(CommerceContext context)
+    public ProductController(CommerceContext context)
     {
         this.context = context;
     }
