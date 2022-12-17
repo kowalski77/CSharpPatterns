@@ -14,7 +14,7 @@ public class FunctionalDecompositionTests
         var productService = new FunctionalProductController(context, discountGeneratorFactory);
 
         // Act
-        var featuredProducts = productService.GetFeaturedProducts(true);
+        var featuredProducts = productService.GetFeaturedProducts(DiscountType.Prefered);
 
         // Assert
         var prices = context.Products.Where(x => x.IsFeatured).Select(p => p.Price).ToList();
@@ -31,7 +31,7 @@ public class FunctionalDecompositionTests
         var productService = new FunctionalProductController(context ,discountGeneratorFactory);
 
         // Act
-        var featuredProducts = productService.GetFeaturedProducts(false);
+        var featuredProducts = productService.GetFeaturedProducts(DiscountType.None);
 
         // Assert
         var prices = context.Products.Where(x => x.IsFeatured).Select(p => p.Price).ToList();

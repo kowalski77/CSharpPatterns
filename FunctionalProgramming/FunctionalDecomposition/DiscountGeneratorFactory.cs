@@ -6,15 +6,17 @@ public delegate Discount DiscountGenerator();
 
 public class DiscountGeneratorFactory
 {
-    private readonly IDictionary<bool, DiscountGenerator> generators;
+    private readonly IDictionary<DiscountType, DiscountGenerator> generators;
 
     public DiscountGeneratorFactory(DiscountOptions options) => 
-        this.generators = options.NonNull().Discounts.ToDictionary(format => format.Prefered, this.CreateDiscountGenerator);
+        this.generators = options.NonNull().Discounts.ToDictionary(
+            format => format.DiscountType, 
+            this.CreateDiscountGenerator);
+
+    public DiscountGenerator GetDiscountGenerator(DiscountType discountType) =>
+        this.generators.TryGetValue(discountType, out var generator) ?
+            generator :
+            throw new ArgumentException($"Invalid option {discountType}", nameof(discountType));
 
     private DiscountGenerator CreateDiscountGenerator(DiscountFormat d) => () => new Discount(d.Value);
-
-    public DiscountGenerator GetDiscountGenerator(bool option) =>
-        this.generators.TryGetValue(option, out var generator) ?
-            generator :
-            throw new ArgumentException($"Invalid option {option}", nameof(option));
 }

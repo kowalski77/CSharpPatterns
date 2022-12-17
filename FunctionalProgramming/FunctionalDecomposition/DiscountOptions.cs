@@ -2,21 +2,16 @@
 
 public sealed class DiscountOptions
 {
-    public const string CustomerPrefered = "Prefered";
-    public const string CustomerNotPrefered = "NotPrefered";
-
     public IReadOnlyCollection<DiscountFormat> Discounts { get; init; } = new List<DiscountFormat>
     {
         new DiscountFormat
         {
-            Prefered = true,
-            Name = CustomerPrefered,
+            DiscountType = DiscountType.Prefered,
             Value = 0.1m
         },
         new DiscountFormat
         {
-            Prefered = false,
-            Name = CustomerNotPrefered,
+            DiscountType = DiscountType.None,
             Value = 0.0m
         }
     };
@@ -24,9 +19,7 @@ public sealed class DiscountOptions
 
 public sealed class DiscountFormat
 {
-    public required bool Prefered { get; init; }
-
-    public required string Name { get; init; }
+    public required DiscountType DiscountType { get; init; }
 
     public required decimal Value { get; init; }
 }

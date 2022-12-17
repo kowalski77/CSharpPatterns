@@ -16,8 +16,8 @@ public class FunctionalProductController
         this.discountGeneratorFactory = discountGeneratorFactory;
     }
 
-    public IEnumerable<Product> GetFeaturedProducts(bool isCustomerPrefered) =>
+    public IEnumerable<Product> GetFeaturedProducts(DiscountType discountType) =>
         this.context.Products
             .Where(p => p.IsFeatured)
-            .WithDiscount(this.discountGeneratorFactory.GetDiscountGenerator(isCustomerPrefered)());
+            .WithDiscount(this.discountGeneratorFactory.GetDiscountGenerator(discountType)());
 }
