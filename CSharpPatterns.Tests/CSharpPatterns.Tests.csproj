@@ -46,10 +46,4 @@
     <ProjectReference Include="..\SourceGenerators\SourceGenerators.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="IntegrationTests\MinimalAPISnapshotTests.Rename.verified.txt">
-      <DependentUpon>MinimalAPISnapshotTests.cs</DependentUpon>
-    </None>
-  </ItemGroup>
-
 </Project>
