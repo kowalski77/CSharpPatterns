@@ -1,6 +1,5 @@
 ﻿using DesignPatterns.Chain.Implementation;
 using FluentAssertions;
-using Xunit;
 
 namespace CSharpPatterns.Tests;
 

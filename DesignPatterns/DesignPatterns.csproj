@@ -9,7 +9,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Folder Include="Behavioral\Chain\" />
 	  <Folder Include="Structural\Decorator\" />
 	  <Folder Include="Behavioral\State\" />
 	  <Folder Include="Behavioral\TemplateMethod\" />
