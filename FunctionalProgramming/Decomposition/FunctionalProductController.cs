@@ -1,6 +1,6 @@
 ﻿using FunctionalProgramming.Constructors.SequenceFactoryMethods;
 
-namespace FunctionalProgramming.FunctionalDecomposition;
+namespace FunctionalProgramming.Decomposition;
 
 // Functional style
 public class FunctionalProductController

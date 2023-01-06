@@ -1,7 +1,7 @@
 ﻿using AutoFixture;
 using FunctionalProgramming.Constructors.SequenceFactoryMethods;
 
-namespace FunctionalProgramming.FunctionalDecomposition;
+namespace FunctionalProgramming.Decomposition;
 
 public class CommerceContext
 {

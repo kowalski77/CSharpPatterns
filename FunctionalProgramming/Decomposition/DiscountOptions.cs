@@ -1,4 +1,4 @@
-﻿namespace FunctionalProgramming.FunctionalDecomposition;
+﻿namespace FunctionalProgramming.Decomposition;
 
 public sealed class DiscountOptions
 {

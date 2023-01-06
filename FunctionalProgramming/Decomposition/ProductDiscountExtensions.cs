@@ -1,7 +1,7 @@
 ﻿using FunctionalProgramming.Constructors.SequenceFactoryMethods;
 using FunctionalProgramming.Guards;
 
-namespace FunctionalProgramming.FunctionalDecomposition;
+namespace FunctionalProgramming.Decomposition;
 
 public static class ProductDiscountExtensions
 {

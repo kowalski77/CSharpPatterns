@@ -1,6 +1,6 @@
 ﻿using FunctionalProgramming.Guards;
 
-namespace FunctionalProgramming.FunctionalDecomposition;
+namespace FunctionalProgramming.Decomposition;
 
 public delegate Discount DiscountGenerator();
 
@@ -8,9 +8,9 @@ public class DiscountGeneratorFactory
 {
     private readonly IDictionary<DiscountType, DiscountGenerator> generators;
 
-    public DiscountGeneratorFactory(DiscountOptions options) => 
+    public DiscountGeneratorFactory(DiscountOptions options) =>
         this.generators = options.NonNull().Discounts.ToDictionary(
-            format => format.DiscountType, 
+            format => format.DiscountType,
             this.CreateDiscountGenerator);
 
     public DiscountGenerator GetDiscountGenerator(DiscountType discountType) =>

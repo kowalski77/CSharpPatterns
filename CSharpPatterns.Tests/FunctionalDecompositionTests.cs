@@ -1,5 +1,5 @@
 ﻿using FluentAssertions;
-using FunctionalProgramming.FunctionalDecomposition;
+using FunctionalProgramming.Decomposition;
 
 namespace CSharpPatterns.Tests;
 
