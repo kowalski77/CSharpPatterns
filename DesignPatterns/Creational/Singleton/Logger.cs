@@ -2,7 +2,7 @@
 
 public class Logger
 {
-    private static readonly Lazy<Logger> lazyLogger = new Lazy<Logger>(() => new Logger());
+    private static readonly Lazy<Logger> lazyLogger = new(() => new Logger());
 
     private Logger() { }
 
