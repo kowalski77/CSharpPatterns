@@ -16,7 +16,9 @@ public class RulesEngineTests
         // Arrange
         var numberHandler = new NumberHandler(new IHandler<Number>[]
         {
-            new MultipleOfThreeAndFiveHandler(), new MultipleOfThreeHandler(), new MultipleOfFiveHandler()
+            new MultipleOfThreeAndFiveHandler(), 
+            new MultipleOfThreeHandler(), 
+            new MultipleOfFiveHandler()
         });
 
         // Act
