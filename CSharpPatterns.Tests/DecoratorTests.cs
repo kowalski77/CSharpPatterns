@@ -1,4 +1,4 @@
-﻿using DesignPatterns.Decorator;
+﻿using DesignPatterns.Structural.Decorator;
 using FluentAssertions;
 using Xunit;
 

@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.RulesEngine;
+﻿namespace DesignPatterns.Behavioral.RulesEngine;
 
 public class MultipleOfThreeAndFiveHandler : IHandler<Number>
 {
@@ -7,9 +7,7 @@ public class MultipleOfThreeAndFiveHandler : IHandler<Number>
         ArgumentNullException.ThrowIfNull(request);
 
         if (request.IsDivisibleBy(3) && request.IsDivisibleBy(5))
-        {
             return "Is divisible by 3 and 5";
-        }
 
         return string.Empty;
     }

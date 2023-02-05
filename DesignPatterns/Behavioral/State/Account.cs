@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.State;
+﻿namespace DesignPatterns.Behavioral.State;
 
 public class Account
 {

@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.State;
+﻿namespace DesignPatterns.Behavioral.State;
 
 public class GoldState : State
 {
@@ -45,12 +45,8 @@ public class GoldState : State
     private void StateChangeCheck()
     {
         if (this.Balance < 0.0)
-        {
             this.Account.State = new RedState(this);
-        }
         else if (this.Balance < this.LowerLimit)
-        {
             this.Account.State = new SilverState(this);
-        }
     }
 }

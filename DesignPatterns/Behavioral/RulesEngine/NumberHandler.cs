@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.RulesEngine;
+﻿namespace DesignPatterns.Behavioral.RulesEngine;
 
 public class NumberHandler
 {
@@ -18,9 +18,7 @@ public class NumberHandler
         {
             result = handler.Handle(number);
             if (!string.IsNullOrEmpty(result))
-            {
                 return result;
-            }
         }
 
         return result;

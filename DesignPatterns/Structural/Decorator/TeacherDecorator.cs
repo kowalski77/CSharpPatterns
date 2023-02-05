@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Decorator;
+﻿namespace DesignPatterns.Structural.Decorator;
 
 public class TeacherDecorator : ITeacher
 {

@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Chain.Implementation
+﻿namespace DesignPatterns.Behavioral.Chain.Implementation
 {
     public static class MathSupport
     {

@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Chain.Abstraction
+﻿namespace DesignPatterns.Behavioral.Chain.Abstraction
 {
     public interface IHandler<TRequest, TResponse>
     {

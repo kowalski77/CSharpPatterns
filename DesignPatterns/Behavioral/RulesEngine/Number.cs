@@ -1,6 +1,6 @@
 ﻿using SharedKernel;
 
-namespace DesignPatterns.RulesEngine;
+namespace DesignPatterns.Behavioral.RulesEngine;
 
 public class Number
 {

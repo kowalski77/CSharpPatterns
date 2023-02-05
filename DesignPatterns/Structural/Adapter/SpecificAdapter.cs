@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Adapter;
+﻿namespace DesignPatterns.Structural.Adapter;
 
 public interface ISpecificAdapter
 {
@@ -17,8 +17,6 @@ public class SpecificAdapter : ISpecificAdapter
     public IEnumerable<string> GetExamples()
     {
         foreach (var example in this.adaptee.GetExamples())
-        {
             yield return example.Text;
-        }
     }
 }

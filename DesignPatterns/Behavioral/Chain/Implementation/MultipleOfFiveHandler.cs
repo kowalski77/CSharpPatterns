@@ -1,13 +1,13 @@
-﻿using DesignPatterns.Chain.Abstraction;
+﻿using DesignPatterns.Behavioral.Chain.Abstraction;
 
-namespace DesignPatterns.Chain.Implementation
+namespace DesignPatterns.Behavioral.Chain.Implementation
 {
     public class MultipleOfFiveHandler : HandlerBase<int, string>
     {
         public override string? Run(int request)
         {
-            return request.IsDivisibleBy(5) ? 
-                $"The number: {request} is divisible by 5" : 
+            return request.IsDivisibleBy(5) ?
+                $"The number: {request} is divisible by 5" :
                 base.Run(request);
         }
     }

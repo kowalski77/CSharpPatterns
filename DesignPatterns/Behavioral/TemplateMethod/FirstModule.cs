@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.TemplateMethod;
+﻿namespace DesignPatterns.Behavioral.TemplateMethod;
 
 public class FirstModule : ModuleBase<FirstStuff>
 {

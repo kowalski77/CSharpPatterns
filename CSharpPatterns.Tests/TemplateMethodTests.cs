@@ -1,6 +1,5 @@
-﻿using DesignPatterns.TemplateMethod;
+﻿using DesignPatterns.Behavioral.TemplateMethod;
 using FluentAssertions;
-using Xunit;
 
 namespace CSharpPatterns.Tests;
 

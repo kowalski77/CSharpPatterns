@@ -1,6 +1,6 @@
-﻿using DesignPatterns.Chain.Abstraction;
+﻿using DesignPatterns.Behavioral.Chain.Abstraction;
 
-namespace DesignPatterns.Chain.Implementation
+namespace DesignPatterns.Behavioral.Chain.Implementation
 {
     public class NoMultipleHandler : HandlerBase<int, string>
     {

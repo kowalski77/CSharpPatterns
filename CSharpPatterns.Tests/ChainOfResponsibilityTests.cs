@@ -1,4 +1,4 @@
-﻿using DesignPatterns.Chain.Implementation;
+﻿using DesignPatterns.Behavioral.Chain.Implementation;
 using FluentAssertions;
 
 namespace CSharpPatterns.Tests;

@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace DesignPatterns.TemplateMethod
+namespace DesignPatterns.Behavioral.TemplateMethod
 {
     public abstract class ModuleBase<T> where T : IStuff, new()
     {

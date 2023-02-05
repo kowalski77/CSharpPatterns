@@ -1,6 +1,6 @@
-﻿using DesignPatterns.Strategy.Support;
+﻿using DesignPatterns.Behavioral.Strategy.Support;
 
-namespace DesignPatterns.Strategy.Classic;
+namespace DesignPatterns.Behavioral.Strategy.Classic;
 
 public class MessageProvider
 {
@@ -15,9 +15,7 @@ public class MessageProvider
         where T : IMessageStrategy
     {
         if (this.strategies.TryGetValue(typeof(T), out var strategy))
-        {
             return strategy.Create(text);
-        }
 
         throw new InvalidOperationException($"No strategy registered for type: {typeof(T)}");
     }

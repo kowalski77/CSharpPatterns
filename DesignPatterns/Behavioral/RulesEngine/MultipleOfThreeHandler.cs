@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.RulesEngine;
+﻿namespace DesignPatterns.Behavioral.RulesEngine;
 
 public class MultipleOfThreeHandler : IHandler<Number>
 {
@@ -7,9 +7,7 @@ public class MultipleOfThreeHandler : IHandler<Number>
         ArgumentNullException.ThrowIfNull(request);
 
         if (request.IsDivisibleBy(3))
-        {
             return "Is divisible by 3";
-        }
 
         return string.Empty;
     }

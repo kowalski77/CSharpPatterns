@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Adapter;
+﻿namespace DesignPatterns.Structural.Adapter;
 
 public interface IAdaptee
 {

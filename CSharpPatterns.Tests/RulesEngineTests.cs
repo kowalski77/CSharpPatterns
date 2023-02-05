@@ -1,4 +1,4 @@
-﻿using DesignPatterns.RulesEngine;
+﻿using DesignPatterns.Behavioral.RulesEngine;
 using FluentAssertions;
 using Xunit;
 

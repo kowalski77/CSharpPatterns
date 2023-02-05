@@ -1,6 +1,6 @@
-﻿using DesignPatterns.Strategy.Support;
+﻿using DesignPatterns.Behavioral.Strategy.Support;
 
-namespace DesignPatterns.Strategy.Classic;
+namespace DesignPatterns.Behavioral.Strategy.Classic;
 
 public interface IMessageStrategy
 {

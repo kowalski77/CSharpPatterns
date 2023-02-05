@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.State;
+﻿namespace DesignPatterns.Behavioral.State;
 
 public class RedState : State
 {
@@ -38,8 +38,6 @@ public class RedState : State
     private void StateChangeCheck()
     {
         if (this.Balance > this.UpperLimit)
-        {
             this.Account.State = new SilverState(this);
-        }
     }
 }

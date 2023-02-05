@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Chain.Abstraction
+﻿namespace DesignPatterns.Behavioral.Chain.Abstraction
 {
     public class HandlerBase<TRequest, TResponse> : IHandler<TRequest, TResponse>
     {
@@ -14,7 +14,7 @@
         public virtual TResponse? Run(TRequest request)
         {
             return this.nextHandler is not null ?
-                this.nextHandler.Run(request) : 
+                this.nextHandler.Run(request) :
                 default;
         }
     }

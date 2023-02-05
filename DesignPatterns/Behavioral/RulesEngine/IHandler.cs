@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.RulesEngine;
+﻿namespace DesignPatterns.Behavioral.RulesEngine;
 
 public interface IHandler<in T> where T : class
 {

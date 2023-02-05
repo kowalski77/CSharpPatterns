@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using DesignPatterns.Strategy.Classic;
-using DesignPatterns.Strategy.Support;
-using DesignPatterns.Strategy.WithContext;
+﻿using DesignPatterns.Behavioral.Strategy.Classic;
+using DesignPatterns.Behavioral.Strategy.Support;
+using DesignPatterns.Behavioral.Strategy.WithContext;
 using FluentAssertions;
-using Xunit;
 
 namespace CSharpPatterns.Tests;
 

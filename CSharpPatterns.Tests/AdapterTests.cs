@@ -1,6 +1,5 @@
-﻿using DesignPatterns.Adapter;
+﻿using DesignPatterns.Structural.Adapter;
 using FluentAssertions;
-using Xunit;
 
 namespace CSharpPatterns.Tests;
 

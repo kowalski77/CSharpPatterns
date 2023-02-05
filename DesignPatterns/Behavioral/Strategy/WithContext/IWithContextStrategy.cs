@@ -1,6 +1,6 @@
-﻿using DesignPatterns.Strategy.Support;
+﻿using DesignPatterns.Behavioral.Strategy.Support;
 
-namespace DesignPatterns.Strategy.WithContext;
+namespace DesignPatterns.Behavioral.Strategy.WithContext;
 
 public interface IWithContextStrategy
 {

@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Strategy.Support;
+﻿namespace DesignPatterns.Behavioral.Strategy.Support;
 
 public class Second : IMessage
 {
