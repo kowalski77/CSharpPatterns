@@ -1,10 +1,10 @@
 ﻿namespace DesignPatterns.Structural.Decorator;
 
-public class TeacherDecorator : ITeacher
+public class StandardDecorator : ITeacher
 {
     private readonly ITeacher teacher;
 
-    public TeacherDecorator(ITeacher teacher)
+    public StandardDecorator(ITeacher teacher)
     {
         this.teacher = teacher;
     }
@@ -13,6 +13,6 @@ public class TeacherDecorator : ITeacher
     {
         var result = this.teacher.TeachCourse(course);
 
-        return $"{result} {nameof(TeacherDecorator)}";
+        return $"{result} and {nameof(StandardDecorator)}";
     }
 }

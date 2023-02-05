@@ -2,8 +2,5 @@
 
 public class RegularTeacher : ITeacher
 {
-    public string TeachCourse(string course)
-    {
-        return nameof(RegularTeacher);
-    }
+    public string TeachCourse(string course) => $"course {course} with {nameof(RegularTeacher)}";
 }

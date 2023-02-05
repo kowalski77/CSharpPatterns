@@ -10,7 +10,6 @@
 
 	<ItemGroup>
 	  <Folder Include="Behavioral\Visitor\" />
-	  <Folder Include="Structural\Decorator\" />
 	  <Folder Include="Behavioral\State\" />
 	  <Folder Include="Behavioral\TemplateMethod\" />
 	  <Folder Include="Behavioral\Strategy\" />
