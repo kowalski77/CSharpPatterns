@@ -24,7 +24,7 @@ public class Vendor2
     }
 
     private Result CanSell(Product2 product) =>
-        this.Products.Contains(product) && product.NonNull().Stock > 0
-            ? Result.Ok()
-            : (Result)new ErrorResult("product.not.available", "Product not available");
+        this.Products.Contains(product) && product.NonNull().Stock > 0 ? 
+            Result.Ok() : 
+            new ErrorResult("product.not.available", "Product not available");
 }

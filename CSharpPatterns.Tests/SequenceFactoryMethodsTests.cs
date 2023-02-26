@@ -57,7 +57,7 @@ public class SequenceFactoryMethodsTests
         // Act
         Result<OrderPurchase2> result = vendor
             .PlaceOrder(productsCollection[0])
-            .OnSuccess(order => customer.Purchase(order));
+            .OnSuccess(customer.Purchase);
 
         // Assert
         result.Value.Customer.Should().Be(customer);
