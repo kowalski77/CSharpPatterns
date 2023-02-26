@@ -20,3 +20,7 @@ public class DiscountGeneratorFactory
 
     private DiscountGenerator CreateDiscountGenerator(DiscountFormat d) => () => new Discount(d.Value);
 }
+
+// Explanation: The DiscountGeneratorFactory class is a factory that creates a DiscountGenerator delegate for each DiscountType.
+// This technique is called the Factory Method pattern and is a creational pattern. It's useful when you don't have the cases on hand,
+// but you know how to create them. In this case, the DiscountGeneratorFactory class knows how to create a DiscountGenerator delegate.
