@@ -1,4 +1,4 @@
-﻿using DesignPatterns.Structural.DecoratorAdvanced;
+﻿using DesignPatterns.Structural.Decorator;
 using FluentAssertions;
 
 namespace CSharpPatterns.Tests;

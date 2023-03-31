@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Structural.DecoratorAdvanced;
+﻿namespace DesignPatterns.Structural.Decorator;
 
 file sealed class ReverseComparer<T> : IComparer<T>
 {
