@@ -12,6 +12,8 @@ This repository contains an example of an ASP.NET Core web application in C# tha
 	c. "/login-ext": initiates the OAuth authentication flow and, upon successful completion, redirects the user to "/weatherforecast". This route requires the "userPolicy" authorization policy (local authentication).
 5.The application also defines a WeatherForecast record that contains weather forecast information, including the date, temperature in Celsius, and a general weather summary.
 
+## Authorization Code Flow
+![authorization code flow diagram](./authcodeflow.png)
 
 
 ## Getting Started
