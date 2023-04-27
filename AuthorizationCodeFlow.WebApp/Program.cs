@@ -8,8 +8,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddAuthentication()
     .AddCookie("local")
-    .AddCookie("ext-oauth-cookie")
-    // this saves the auth token into the cookie in a safe manner
+    .AddCookie("ext-oauth-cookie") // this saves the auth token into the cookie in a safe manner
     .AddOAuth("ext-oauth-provider", o =>
     {
         o.SignInScheme = "ext-oauth-cookie";
@@ -29,26 +28,19 @@ builder.Services.AddAuthentication()
 
 builder.Services.AddAuthorization(b =>
 {
-    b.AddPolicy("user", p =>
+    b.AddPolicy("userPolicy", p =>
     {
         p.AddAuthenticationSchemes("local")
             .RequireAuthenticatedUser();
     });
-    b.AddPolicy("fullaccess", p =>
+    b.AddPolicy("fullaccessPolicy", p =>
     {
         p.AddAuthenticationSchemes("ext-oauth-provider")
             .RequireAuthenticatedUser();
     });
 });
 
-
 var app = builder.Build();
-
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
 
 app.UseHttpsRedirection();
 
@@ -72,9 +64,7 @@ app.MapGet("/weatherforecast", () =>
         .ToArray();
     return forecast;
 })
-    .RequireAuthorization("fullaccess")
-    .WithName("GetWeatherForecast")
-    .WithOpenApi();
+    .RequireAuthorization("fullaccessPolicy");
 
 app.MapGet("/login-local", async (ctx) =>
 {
@@ -89,11 +79,11 @@ app.MapGet("/login-ext", async (ctx) => await ctx.ChallengeAsync("ext-oauth-prov
 {
     RedirectUri = "/weatherforecast"
 }))
-    .RequireAuthorization("user");
+    .RequireAuthorization("userPolicy");
 
 app.Run();
 
 internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    public int TemperatureF => 32 + (int)(this.TemperatureC / 0.5556);
 }

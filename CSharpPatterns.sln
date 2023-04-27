@@ -43,7 +43,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TPL.Studio", "TPL.Studio\TP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Certificates.API", "Playground.Certificates.API\Playground.Certificates.API.csproj", "{6D724C95-B075-40B3-A62D-00E902C10372}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Certificates", "Certificates", "{03A70CFE-6FBC-43EF-A18E-AF3F04416829}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security", "Security", "{03A70CFE-6FBC-43EF-A18E-AF3F04416829}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Certificates.Client", "Playground.Certificates.Client\Playground.Certificates.Client.csproj", "{480E044A-B26C-480E-ACF2-326F33F08DE8}"
 EndProject
@@ -73,9 +73,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiagnosticsExamples.Lib", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Controllers.API", "Playground.Controllers.API\Playground.Controllers.API.csproj", "{759F0CE8-FBCA-475C-902E-E41F2F9DC9AA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.AuthPoC.API", "Playground.AuthPoC.API\Playground.AuthPoC.API.csproj", "{88453AB4-6DFA-4435-9943-370D5F090FBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorizationCodeFlow.WebApp", "AuthorizationCodeFlow.WebApp\AuthorizationCodeFlow.WebApp.csproj", "{88453AB4-6DFA-4435-9943-370D5F090FBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.ErrorHandling.API", "Playground.ErrorHandling.API\Playground.ErrorHandling.API.csproj", "{C10F8AC0-6362-4DA1-AEFF-C0826923E492}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.ErrorHandling.API", "Playground.ErrorHandling.API\Playground.ErrorHandling.API.csproj", "{C10F8AC0-6362-4DA1-AEFF-C0826923E492}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -226,7 +226,7 @@ Global
 		{AF61C2E8-5C4E-4371-8D1A-73DF1FE1CA27} = {6BB9BBF4-E436-4C11-9FC7-4E2AF4FD856B}
 		{F1456FE5-658D-4860-BB5C-666513300D82} = {6BB9BBF4-E436-4C11-9FC7-4E2AF4FD856B}
 		{759F0CE8-FBCA-475C-902E-E41F2F9DC9AA} = {93984DCB-F4BD-4ABC-B323-E3436AAFB8FD}
-		{88453AB4-6DFA-4435-9943-370D5F090FBE} = {93984DCB-F4BD-4ABC-B323-E3436AAFB8FD}
+		{88453AB4-6DFA-4435-9943-370D5F090FBE} = {03A70CFE-6FBC-43EF-A18E-AF3F04416829}
 		{C10F8AC0-6362-4DA1-AEFF-C0826923E492} = {93984DCB-F4BD-4ABC-B323-E3436AAFB8FD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
