@@ -77,6 +77,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorizationCodeFlow.WebAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.ErrorHandling.API", "Playground.ErrorHandling.API\Playground.ErrorHandling.API.csproj", "{C10F8AC0-6362-4DA1-AEFF-C0826923E492}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JwtBearerCertAuth.API", "JwtBearerCertAuth.API\JwtBearerCertAuth.API.csproj", "{BF2D8012-3CEC-4B87-AD7B-534DB6CA6931}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JwtBearerCertAuth.App", "JwtBearerCertAuth.App\JwtBearerCertAuth.App.csproj", "{D70FFE1D-65AA-4334-9625-602D7FD08D18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -191,6 +195,14 @@ Global
 		{C10F8AC0-6362-4DA1-AEFF-C0826923E492}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C10F8AC0-6362-4DA1-AEFF-C0826923E492}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C10F8AC0-6362-4DA1-AEFF-C0826923E492}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF2D8012-3CEC-4B87-AD7B-534DB6CA6931}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF2D8012-3CEC-4B87-AD7B-534DB6CA6931}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF2D8012-3CEC-4B87-AD7B-534DB6CA6931}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF2D8012-3CEC-4B87-AD7B-534DB6CA6931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D70FFE1D-65AA-4334-9625-602D7FD08D18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D70FFE1D-65AA-4334-9625-602D7FD08D18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D70FFE1D-65AA-4334-9625-602D7FD08D18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D70FFE1D-65AA-4334-9625-602D7FD08D18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -228,6 +240,8 @@ Global
 		{759F0CE8-FBCA-475C-902E-E41F2F9DC9AA} = {93984DCB-F4BD-4ABC-B323-E3436AAFB8FD}
 		{88453AB4-6DFA-4435-9943-370D5F090FBE} = {03A70CFE-6FBC-43EF-A18E-AF3F04416829}
 		{C10F8AC0-6362-4DA1-AEFF-C0826923E492} = {93984DCB-F4BD-4ABC-B323-E3436AAFB8FD}
+		{BF2D8012-3CEC-4B87-AD7B-534DB6CA6931} = {03A70CFE-6FBC-43EF-A18E-AF3F04416829}
+		{D70FFE1D-65AA-4334-9625-602D7FD08D18} = {03A70CFE-6FBC-43EF-A18E-AF3F04416829}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5A5D1502-888D-4928-9977-43AF0BBD18BB}
