@@ -39,4 +39,14 @@ response.EnsureSuccessStatusCode();
 
 var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 Console.WriteLine(content);
+
+Console.WriteLine("press key again");
+Console.ReadKey();
+
+var response2 = await client.GetAsync(new Uri("https://localhost:7132/WeatherForecast")).ConfigureAwait(false);
+response2.EnsureSuccessStatusCode();
+
+var content2 = await response2.Content.ReadAsStringAsync().ConfigureAwait(false);
+Console.WriteLine(content2);
+
 Console.ReadKey();
