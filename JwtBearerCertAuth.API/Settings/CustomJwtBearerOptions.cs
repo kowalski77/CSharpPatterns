@@ -1,7 +1,6 @@
 ﻿using System.Security.Cryptography;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 
 namespace JwtBearerCertAuth.API.Settings;
@@ -14,7 +13,9 @@ public sealed class CustomJwtBearerOptions : IConfigureNamedOptions<JwtBearerOpt
     public CustomJwtBearerOptions(ILogger<CustomJwtBearerOptions> logger)
     {
         this.rsa = RSA.Create();
-        this.rsa.ImportFromPem(File.ReadAllText("public-key.pem"));
+        var publicKey = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "public-key.pem"));
+        this.rsa.ImportFromPem(publicKey);
+
         this.logger = logger;
     }
 
@@ -29,7 +30,7 @@ public sealed class CustomJwtBearerOptions : IConfigureNamedOptions<JwtBearerOpt
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = new RsaSecurityKey(this.rsa),
             ValidateIssuer = true,
-            ValidIssuer = "cert-auth.com2",
+            ValidIssuer = "cert-auth.com",
             ValidateAudience = true,
             ValidAudience = "JwtBearerCertAuth.API",
             ValidateLifetime = true,

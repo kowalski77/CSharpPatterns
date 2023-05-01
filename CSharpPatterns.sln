@@ -73,6 +73,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtBearerCertAuth.App", "Jw
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Others", "Others", "{DAC7C8D8-C796-44A7-9207-53AEEC6ED148}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Certificates", "Certificates", "{5A6BB404-B30D-4AD2-BDD1-9450F8164FB8}"
+	ProjectSection(SolutionItems) = preProject
+		Certificates\private-rsa-key.key = Certificates\private-rsa-key.key
+		Certificates\public-key.pem = Certificates\public-key.pem
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -210,6 +216,7 @@ Global
 		{BF2D8012-3CEC-4B87-AD7B-534DB6CA6931} = {03A70CFE-6FBC-43EF-A18E-AF3F04416829}
 		{D70FFE1D-65AA-4334-9625-602D7FD08D18} = {03A70CFE-6FBC-43EF-A18E-AF3F04416829}
 		{DAC7C8D8-C796-44A7-9207-53AEEC6ED148} = {93984DCB-F4BD-4ABC-B323-E3436AAFB8FD}
+		{5A6BB404-B30D-4AD2-BDD1-9450F8164FB8} = {90169C8D-2850-499A-9C42-E64E384AF81C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5A5D1502-888D-4928-9977-43AF0BBD18BB}
