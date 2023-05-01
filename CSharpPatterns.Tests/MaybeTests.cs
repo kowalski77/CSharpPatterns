@@ -1,6 +1,6 @@
 ﻿using System;
 using FluentAssertions;
-using SharedKernel.Functional;
+using FunctionalProgramming.Optional;
 using Xunit;
 
 namespace CSharpPatterns.Tests;

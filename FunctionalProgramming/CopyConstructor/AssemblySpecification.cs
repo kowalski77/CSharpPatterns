@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace FunctionalProgramming.NondestructiveMutation;
+namespace FunctionalProgramming.CopyConstructor;
 
 // Copy constructor pattern (Nondestructive mutation), like "with" for records but for classes to achieve immutability.
 public class AssemblySpecification

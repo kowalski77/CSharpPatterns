@@ -1,5 +1,5 @@
 ﻿using FluentAssertions;
-using FunctionalProgramming.NondestructiveMutation;
+using FunctionalProgramming.CopyConstructor;
 
 namespace CSharpPatterns.Tests;
 

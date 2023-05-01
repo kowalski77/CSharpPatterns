@@ -2,7 +2,7 @@
 using FluentAssertions;
 using FunctionalProgramming.Constructors.SequenceFactoryMethods;
 using FunctionalProgramming.Constructors.SequenceFactoryMethodsWithResult;
-using SharedKernel.Results;
+using FunctionalProgramming.Results;
 using ProductSeq = FunctionalProgramming.Constructors.SequenceFactoryMethods.Product;
 using ProductSeq2 = FunctionalProgramming.Constructors.SequenceFactoryMethodsWithResult.Product2;
 

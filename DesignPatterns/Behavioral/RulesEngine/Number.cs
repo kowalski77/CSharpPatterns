@@ -1,12 +1,10 @@
-﻿using SharedKernel;
-
-namespace DesignPatterns.Behavioral.RulesEngine;
+﻿namespace DesignPatterns.Behavioral.RulesEngine;
 
 public class Number
 {
     private Number(int value)
     {
-        this.Value = Guards.ThrowIfLessOrEqualThan(value, 0);
+        this.Value = value;
     }
 
     public int Value { get; }

@@ -1,5 +1,5 @@
 ﻿using FunctionalProgramming.Guards;
-using SharedKernel.Results;
+using FunctionalProgramming.Results;
 
 namespace FunctionalProgramming.Constructors.SequenceFactoryMethodsWithResult;
 
