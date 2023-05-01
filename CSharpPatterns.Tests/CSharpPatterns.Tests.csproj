@@ -37,7 +37,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AsyncPatterns\AsyncPatterns.csproj" />
-    <ProjectReference Include="..\Comparisons\Comparisons.csproj" />
     <ProjectReference Include="..\DesignPatterns\DesignPatterns.csproj" />
     <ProjectReference Include="..\Factory\Factory.csproj" />
     <ProjectReference Include="..\FunctionalProgramming\FunctionalProgramming.csproj" />

@@ -1,5 +1,5 @@
-﻿using Comparisons;
-using FluentAssertions;
+﻿using FluentAssertions;
+using Playground.Comparisons;
 
 namespace CSharpPatterns.Tests;
 
