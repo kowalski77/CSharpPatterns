@@ -12,9 +12,8 @@ public sealed class CustomJwtBearerOptions : IConfigureNamedOptions<JwtBearerOpt
 
     public CustomJwtBearerOptions()
     {
-        const string publicKey = "public-key.pem";
         this.rsa = RSA.Create();
-        this.rsa.ImportFromPem(File.ReadAllText(publicKey));
+        this.rsa.ImportFromPem(File.ReadAllText("public-key.pem"));
     }
 
     public void Configure(string? name, JwtBearerOptions options) => this.Configure(options);
