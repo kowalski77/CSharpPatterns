@@ -2,18 +2,13 @@
 
 public class Result
 {
-    protected Result(ErrorResult error)
-    {
-        this.Success = false;
-        this.Error = error;
-    }
+    protected Result(IEnumerable<ErrorResult> errorResults) => this.Errors = errorResults.ToList();
 
-    protected Result()
-    {
-        this.Success = true;
-    }
+    protected Result(ErrorResult errorResult) => this.Errors = new List<ErrorResult> { errorResult };
 
-    public ErrorResult? Error { get; }
+    protected Result() => this.Success = true;
+
+    public IEnumerable<ErrorResult>? Errors { get; }
 
     public bool Success { get; }
 
@@ -21,33 +16,15 @@ public class Result
 
     public static Result Init => Ok();
 
-    public static Result Ok()
-    {
-        return new Result();
-    }
+    public static Result Ok() => new();
 
-    public static Result Fail(ErrorResult error)
-    {
-        return new Result(error);
-    }
+    public static Result<T> Ok<T>(T value) => new(value);
 
-    public static implicit operator Result(ErrorResult error)
-    {
-        return new Result(error);
-    }
+    public static Result Fail(IEnumerable<ErrorResult> errorResults) => new(errorResults);
 
-    public static Result<T> Ok<T>(T value)
-    {
-        return new Result<T>(value);
-    }
+    public static Result<T> Fail<T>(IEnumerable<ErrorResult> errorResults) => new(errorResults);
 
-    public static Result<T> Fail<T>(ErrorResult error)
-    {
-        return new Result<T>(error);
-    }
+    public static implicit operator Result(ErrorResult error) => new(error);
 
-    public Result ToResult()
-    {
-        throw new NotImplementedException();
-    }
+    public static implicit operator Result(List<ErrorResult> errors) => new(errors);
 }

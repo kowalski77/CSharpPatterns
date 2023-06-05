@@ -13,7 +13,7 @@ public abstract class ExpectContacts : IExpectOtherContactsPersonBuilder
         var (name, surname, primaryContact) = this.GetMandatoryData();
     
         IList<IContact> otherContacts = new List<IContact>();
-        this.ForEachContact((contact) => otherContacts.Add(contact));
+        this.ForEachContact(otherContacts.Add);
 
         return new FinalPersonBuilder(name, surname, primaryContact, otherContacts);
     }

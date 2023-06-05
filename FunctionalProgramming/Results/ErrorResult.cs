@@ -1,26 +1,16 @@
 ﻿namespace FunctionalProgramming.Results;
 
-public class ErrorResult
+public record ErrorResult
 {
-    private const string Separator = "||";
-
     public ErrorResult(
-        string? code,
-        string? message)
+        string title,
+        string message)
     {
-        this.Code = code;
+        this.Title = title;
         this.Message = message;
-        this.TimeGenerated = DateTime.UtcNow;
     }
 
-    public string? Code { get; }
+    public string Title { get; }
 
-    public string? Message { get; }
-
-    public DateTime TimeGenerated { get; }
-
-    public string Serialize()
-    {
-        return $"{this.Code}{Separator}{this.Message}";
-    }
+    public string Message { get; }
 }

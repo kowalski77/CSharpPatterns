@@ -20,7 +20,7 @@ public class Vendor2
         Result result = this.CanSell(product);
         return result.Success ?
             new Order2(this, product) :
-            result.Error!;
+            result.ToErrorsResult();
     }
 
     private Result CanSell(Product2 product) =>

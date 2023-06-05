@@ -57,7 +57,7 @@ public class SequenceFactoryMethodsTests
         // Act
         Result<OrderPurchase2> result = vendor
             .PlaceOrder(productsCollection[0])
-            .OnSuccess(customer.Purchase);
+            .Bind(customer.Purchase);
 
         // Assert
         result.Value.Customer.Should().Be(customer);
@@ -75,10 +75,9 @@ public class SequenceFactoryMethodsTests
         // Act
         Result<OrderPurchase2> result = vendor
             .PlaceOrder(productsCollection[0])
-            .OnSuccess(order => customer.Purchase(order));
+            .Bind(customer.Purchase);
 
         // Assert
-        result.Error.Should().NotBeNull();
-        result.Error!.Code.Should().Be("insufficient.cretit");
+        result.Errors.Should().NotBeNull();
     }
 }

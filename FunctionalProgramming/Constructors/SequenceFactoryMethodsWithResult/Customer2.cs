@@ -20,7 +20,7 @@ public class Customer2
         Result result = this.CanAfford(order);
         return result.Success ?
             new OrderPurchase2(this, order) :
-            result.Error!;
+            result.ToErrorsResult();
     }
 
     private Result CanAfford(Order2 order) =>
